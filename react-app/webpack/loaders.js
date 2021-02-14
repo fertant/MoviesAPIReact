@@ -93,6 +93,18 @@ const JSXLoader = {
   }]
 };
 
+const TSLoader = {
+  test: /\.tsx?$/,
+  use: [
+    {
+      loader: 'ts-loader',
+      options: {
+        transpileOnly: true
+      }
+    }
+  ]
+};
+
 const ESLint = {
   loader: 'eslint-loader',
   options: {
