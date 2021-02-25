@@ -7,7 +7,6 @@ const _ImageminPlugin = require('imagemin-webpack-plugin').default;
 const _SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const imagePath = path.resolve(__dirname, '../images');
 
@@ -39,8 +38,6 @@ const HtmlPlugin = new HtmlWebpackPlugin({
   title: "Movie Search"
 });
 
-const TSPlugin = new TsconfigPathsPlugin({ configFile: "../tsconfig.json" });
-
 module.exports = {
   ProgressPlugin,
   MiniCssExtractPlugin,
@@ -48,7 +45,6 @@ module.exports = {
   SpriteLoaderPlugin,
   HotModuleReplacement,
   HtmlPlugin,
-  TSPlugin,
   CleanWebpackPlugin: new CleanWebpackPlugin({
     protectWebpackAssets: false,
     cleanOnceBeforeBuildPatterns: ['!*.{png,jpg,gif,svg}'],

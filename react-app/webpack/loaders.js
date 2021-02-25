@@ -74,33 +74,13 @@ const SVGSpriteLoader = {
   },
 };
 
-const JSXLoader = {
-  test: /\.(jsx|js)$/,
+const JSLoader = {
+  test: /\.(js|ts)x?$/,
   include: path.resolve(__dirname, '../src'),
   exclude: /node_modules/,
-  use: [{
-    loader: 'babel-loader',
-    options: {
-      presets: [
-        ['@babel/preset-env', {
-          "targets": "defaults" 
-        }],
-        ['@babel/preset-react', {
-          "runtime": "automatic"
-        }]
-      ]
-    }
-  }]
-};
-
-const TSLoader = {
-  test: /\.tsx?$/,
   use: [
     {
-      loader: 'ts-loader',
-      options: {
-        transpileOnly: true
-      }
+      loader: 'babel-loader',
     }
   ]
 };
@@ -118,6 +98,6 @@ module.exports = {
   FontLoader,
   SVGSpriteLoader,
   ImageLoader,
-  JSXLoader,
+  JSLoader,
   ESLint,
 };

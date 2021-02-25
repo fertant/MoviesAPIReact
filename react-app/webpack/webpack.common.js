@@ -3,22 +3,17 @@ const loaders = require('./loaders');
 const plugins = require('./plugins');
 
 module.exports = {
-  entry: path.resolve(__dirname, '../src', 'index.js'),
+  entry: path.resolve(__dirname, '../src', 'index.tsx'),
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'bundle.js'
+    filename: '[name].[contenthash].js'
   },
-  devServer: {
-    contentBase: path.resolve(__dirname, '../dist'),
-    open: true,
-    clientLogLevel: 'silent',
-    port: 9000,
-    historyApiFallback: true,
-    hot: true
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
   },
   module: {
     rules: [
-      loaders.JSXLoader,
+      loaders.JSLoader,
       loaders.SVGSpriteLoader,
       loaders.CSSLoader,
       loaders.SASSLoader,
@@ -36,4 +31,16 @@ module.exports = {
     plugins.HotModuleReplacement,
     plugins.HtmlPlugin,
   ],
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  }
 }
