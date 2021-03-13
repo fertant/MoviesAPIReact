@@ -15,8 +15,8 @@ const CSSLoader = {
     {
       loader: MiniCssExtractPlugin.loader,
       options: {
-        publicPath: '../',
-      }
+        publicPath: '../src',
+      },
     },
     'css-loader',
   ],
@@ -30,17 +30,20 @@ const SASSLoader = {
     {
       loader: MiniCssExtractPlugin.loader,
       options: {
-        publicPath: '../',
-      }
+        publicPath: '../src',
+      },
     },
     {
       loader: 'css-loader',
+      options: {
+        modules: true,
+      },
     },
     {
       loader: 'postcss-loader',
       options: {
-        config: {
-          path: path.resolve('./webpack/'),
+        postcssOptions: {
+          config: path.resolve(__dirname, 'postcss.config.js'),
         },
       },
     },
@@ -81,15 +84,15 @@ const JSLoader = {
   use: [
     {
       loader: 'babel-loader',
-    }
-  ]
+    },
+  ],
 };
 
 const ESLint = {
   loader: 'eslint-loader',
   options: {
-    fix: true
-  }
+    fix: true,
+  },
 };
 
 module.exports = {

@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 const loaders = require('./loaders');
 const plugins = require('./plugins');
 
@@ -6,10 +6,10 @@ module.exports = {
   entry: path.resolve(__dirname, '../src', 'index.tsx'),
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].[contenthash].js'
+    filename: '[name].[contenthash].js',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   module: {
     rules: [
@@ -42,5 +42,5 @@ module.exports = {
         },
       },
     },
-  }
-}
+  },
+};
