@@ -24,7 +24,7 @@ export const SearchButton = styled(Button)`
   min-width: 120px;
 `;
 
-export const AddButton = styled(Button)`
+export const BlackButton = styled(Button)`
   color: ${props => props.theme.color_a};
   background-color: ${props => props.theme.color_d};
   font-weight: 600;
@@ -34,6 +34,10 @@ export const AddButton = styled(Button)`
       cursor: pointer;
       opacity: 0.95;
   }
+`;
+
+export const BlackButtonWithBorder = styled(BlackButton)`
+  border: 1px solid ${props => props.theme.color_a};
 `;
 
 export default Button;

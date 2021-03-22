@@ -14,6 +14,10 @@ export const SearchTitle = styled.h1`
 export const SearchFieldWrapper = styled.div`
   display: flex;
   gap: 0.35em;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export default SearchWrapper;

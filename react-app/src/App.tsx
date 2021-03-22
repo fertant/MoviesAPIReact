@@ -1,23 +1,27 @@
 import React from 'react';
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from 'styled-components';
 
 import './App.scss';
 import theme from './components/theme/Theme';
 
-import CopyrightComponent from './components/atoms/Copyright/CopyrightComponent';
-import ButtonComponent from './components/atoms/Button/ButtonComponent';
-import SearchComponent from './components/molecules/Search/SearchComponent';
 import HeaderComponent from './components/organisms/Header/HeaderComponent';
+import MovieListWrapperComponent from './components/templates/MovieList/MovieListWrapperComponent';
+import FooterComponent from './components/organisms/Footer/FooterComponent';
+import DialogComponent from './components/molecules/Dialog/DialogComponent';
+import AppProvider from './context/AppContext';
 
 function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <CopyrightComponent />
-        <ButtonComponent type='search' text='Search' />
-        <ButtonComponent type='add' text='+ add movie' />
-        <SearchComponent placeholder={'What do you want to watch?'}/>
-        <HeaderComponent />
+        <AppProvider>
+          <HeaderComponent />
+          <MovieListWrapperComponent />
+          <FooterComponent />
+          <DialogComponent type='add' />
+          <DialogComponent type='edit' />
+          <DialogComponent type='delete' />
+        </AppProvider>
       </ThemeProvider>
     </div>
   );
