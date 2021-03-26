@@ -6,6 +6,7 @@ const defaultState = {
   add: false,
   edit: false,
   delete: false,
+  details: false,
   movieType: 'all',
   movieQuery: '',
   movieSort: 'yearOfRelease',

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 import { IMovieEditState } from './IMovie';
+import { ITheme } from '../../theme/ITheme';
 
 export const MovieItemWrapper = styled.div`
   position: relative;
-  color: ${props => props.theme.color_d};;
+  color: ${(props: ITheme) => props.theme.color_d};
   width: 100%;
 
   @media (min-width: 768px) {
@@ -29,7 +30,7 @@ export const MovieTitle = styled.h1`
 `;
 
 export const MovieYear = styled.div`
-  border: 1px ${props => props.theme.color_d} solid;
+  border: 1px ${(props: ITheme) => props.theme.color_d} solid;
   border-radius: 3px;
   padding: 2px 0;
   margin: 5px;
@@ -48,7 +49,7 @@ export const MovieGenre = styled.div`
 
 export const EditIcon = styled.div`
   position: absolute;
-  background-color: ${props => props.theme.color_c};
+  background-color: ${(props: ITheme) => props.theme.color_c};
   border-radius: 18px;
   font-size: 0;
   padding: 18px;
@@ -58,7 +59,7 @@ export const EditIcon = styled.div`
 
 export const ThreeDots = styled.span`
   position: relative;
-  background-color: ${props => props.theme.color_e};
+  background-color: ${(props: ITheme) => props.theme.color_e};
   border-radius: 2px;
   font-size: 0;
   padding: 2px;
@@ -69,7 +70,7 @@ export const ThreeDots = styled.span`
     top: -8px;
     content: '';
 
-    background-color: ${props => props.theme.color_e};
+    background-color: ${(props: ITheme) => props.theme.color_e};
     border-radius: 2px;
     font-size: 0;
     padding: 2px;
@@ -81,7 +82,7 @@ export const ThreeDots = styled.span`
     top: 8px;
     content: '';
 
-    background-color: ${props => props.theme.color_e};
+    background-color: ${(props: ITheme) => props.theme.color_e};
     border-radius: 2px;
     font-size: 0;    
     padding: 2px;
@@ -92,24 +93,24 @@ export const EditMenuItem = styled.button`
   width: 100%;
   padding: 5px 25px;
   margin: 5px 0;
-  background: ${props => props.theme.color_c};
+  background: ${(props: ITheme) => props.theme.color_c};
   text-align: start;
   border: none;
   font-size: 18px;
-  color: ${props => props.theme.color_e};
+  color: ${(props: ITheme) => props.theme.color_e};
 
   &:hover {
-    background-color: ${props => props.theme.color_a};
-    color: ${props => props.theme.color_e};
+    background-color: ${(props: ITheme) => props.theme.color_a};
+    color: ${(props: ITheme) => props.theme.color_e};
   }
 `;
 
 export const EditMenu = styled.div`
-  display: ${(props: IMovieEditState) => props.editOpened ? 'inline-block' : 'none'};
+  display: ${(props: IMovieEditState) => (props.editOpened ? 'inline-block' : 'none')};
   position: absolute;
   width: 210px;
   padding: 30px 0 20px;
-  background-color: ${props => props.theme.color_c};
+  background-color: ${(props: ITheme) => props.theme.color_c};
   border-radius: 2px;
   top: 10px;
   right: 10px;
@@ -121,7 +122,7 @@ export const CloseIcon = styled.button`
   top: 5px;
   opacity: 0.3;
   border: none;
-  background-color: ${props => props.theme.color_c};
+  background-color: ${(props: ITheme) => props.theme.color_c};
 
   &:hover {
     opacity: 1;
@@ -133,7 +134,7 @@ export const CloseIcon = styled.button`
     content: ' ';
     height: 15px;
     width: 2px;
-    background-color: ${props => props.theme.color_e};
+    background-color: ${(props: ITheme) => props.theme.color_e};
   }
 
   &:before {
@@ -142,6 +143,6 @@ export const CloseIcon = styled.button`
   &:after {
     transform: rotate(-45deg);
   }
-`;  
-  
+`;
+
 export default MovieItemWrapper;

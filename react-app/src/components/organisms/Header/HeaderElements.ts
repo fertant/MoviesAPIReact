@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+
 import img from '../../../../images/bg_header.jpg';
+import { ITheme } from '../../theme/ITheme';
 
 export const TopNavWrapper = styled.div`
   display: flex;
-  color: ${props => props.theme.color_a};
+  color: ${(props: ITheme) => props.theme.color_a};
   justify-content: space-between;
   width: 100%;
 `;
@@ -11,7 +13,7 @@ export const TopNavWrapper = styled.div`
 export const HeaderWrapper = styled.header`
   padding: 10px 20px;
   margin-bottom: 10px;
-  height: 300px;
+  height: 400px;
   position: relative;    
 `;
 

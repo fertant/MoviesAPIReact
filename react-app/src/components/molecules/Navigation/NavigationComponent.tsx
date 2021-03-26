@@ -35,8 +35,8 @@ const NavigationComponent: FunctionComponent<INavigation> = ({ filters }) => {
         <SortFilterComponent label={'Sort by'}
                           selected={{key: 'releasedate', value: 'release date'}}
                           items={[
-                              {key: 'yearOfRelease', value: 'release date'},
-                              {key: 'title', value: 'title'},
+                            {key: 'yearOfRelease', value: 'release date'},
+                            {key: 'title', value: 'title'},
                           ]}/>
       </ManagePanelWrapper>
       <SeparatedLine />

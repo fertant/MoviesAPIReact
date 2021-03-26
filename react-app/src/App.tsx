@@ -9,18 +9,21 @@ import MovieListWrapperComponent from './components/templates/MovieList/MovieLis
 import FooterComponent from './components/organisms/Footer/FooterComponent';
 import DialogComponent from './components/molecules/Dialog/DialogComponent';
 import AppProvider from './context/AppContext';
+import MovieProvider from './context/MovieContext';
 
 function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
         <AppProvider>
-          <HeaderComponent />
-          <MovieListWrapperComponent />
-          <FooterComponent />
-          <DialogComponent type='add' />
-          <DialogComponent type='edit' />
-          <DialogComponent type='delete' />
+          <MovieProvider>
+            <HeaderComponent />
+            <MovieListWrapperComponent />
+            <FooterComponent />
+            <DialogComponent type="add" />
+            <DialogComponent type="edit" />
+            <DialogComponent type="delete" />
+          </MovieProvider>
         </AppProvider>
       </ThemeProvider>
     </div>

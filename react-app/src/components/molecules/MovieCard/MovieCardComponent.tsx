@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState, useContext, useCallback } from 'react';
 
 import { IMovieProps } from './IMovie';
 import {
@@ -16,9 +16,10 @@ import {
 } from './MovieCard';
 import { useDispatch } from '../../../hooks/CustomHooks';
 import { actionControlVisibility } from '../../../context/AppContext';
-
+import { MovieContext } from '../../../context/MovieContext';
 
 const MovieCardComponent: FunctionComponent<IMovieProps> = ({ item }) => {
+  const { setMovieDetails } = useContext(MovieContext);
   const [editMenuOpened, setEditActive] = useState(false);
   const dispatch = useDispatch();
   const onEditMovie = () => {
@@ -29,6 +30,10 @@ const MovieCardComponent: FunctionComponent<IMovieProps> = ({ item }) => {
     dispatch(actionControlVisibility('delete', true));
     setEditActive(false);
   };
+  const onShowMovieDetails = useCallback(() => {
+    setMovieDetails(item);
+    dispatch(actionControlVisibility('details', true));
+  }, [item]);
 
   return (
     <MovieItemWrapper>
@@ -40,7 +45,7 @@ const MovieCardComponent: FunctionComponent<IMovieProps> = ({ item }) => {
         <EditMenuItem onClick={onEditMovie}>Edit</EditMenuItem>
         <EditMenuItem onClick={onDeleteMovie}>Delete</EditMenuItem>
       </EditMenu>
-      <MovieScreen src={ item.img }/>
+      <MovieScreen src={item.img} onClick={onShowMovieDetails} />
       <MovieTitleWrapper>
         <MovieTitle>{ item.title }</MovieTitle>
         <MovieYear>{ item.yearOfRelease }</MovieYear>

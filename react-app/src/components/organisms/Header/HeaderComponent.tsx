@@ -10,7 +10,9 @@ import {
   HeaderBackground,
   HeaderWrapper,
   HeaderElementsWrapper,
+  HeaderMovieDetails,
 } from './HeaderElements';
+import MemoMovieDetailsComponent from '../../molecules/MovieDetails/MovieDetailsComponent';
 
 const HeaderComponent: FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -19,18 +21,19 @@ const HeaderComponent: FunctionComponent = () => {
   };
 
   return (
-  <HeaderWrapper>
-    <HeaderBackground />
-    <HeaderElementsWrapper>
-      <TopNavWrapper>
-        <CopyrightComponent />
-        <BlackButton onClick={onAddMovie}>
-          <span>+ Add Movie</span>
-        </BlackButton>
-      </TopNavWrapper>
-      <SearchComponent placeholder={'What do you want to watch?'}/>
-    </HeaderElementsWrapper>
-  </HeaderWrapper>
+    <HeaderWrapper>
+      <HeaderBackground />
+      <HeaderElementsWrapper>
+        <TopNavWrapper>
+          <CopyrightComponent />
+          <BlackButton onClick={onAddMovie}>
+            <span>+ Add Movie</span>
+          </BlackButton>
+        </TopNavWrapper>
+        <SearchComponent placeholder={'What do you want to watch?'}/>
+      </HeaderElementsWrapper>
+      <MemoMovieDetailsComponent />
+    </HeaderWrapper>
   );
 };
 
