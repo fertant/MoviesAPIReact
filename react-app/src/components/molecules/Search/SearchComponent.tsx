@@ -1,11 +1,11 @@
 import React, { FunctionComponent, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { SearchButton } from '../../atoms/Button/Button';
 import Input from '../../atoms/Input/Input';
 import { SearchWrapper, SearchTitle, SearchFieldWrapper } from './SearchElements';
 import { ISearch } from './ISearch';
-import { useDispatch } from '../../../hooks/CustomHooks';
-import { actionFilter } from '../../../context/AppContext';
+import { actionSetFilter } from '../../../actions/Actions';
 
 const SearchComponent: FunctionComponent<ISearch> = ({ placeholder }) => {
   const [input, setInput] = useState('');
@@ -14,13 +14,13 @@ const SearchComponent: FunctionComponent<ISearch> = ({ placeholder }) => {
   const onInput = (e: React.SyntheticEvent) => {
     setInput(e.target.value);
     if (e.keyCode === '13') {
-      dispatch(actionFilter('movieQuery', input));
+      dispatch(actionSetFilter('movieQuery', input));
     }
   };
 
   const onSearchSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    dispatch(actionFilter('movieQuery', input));
+    dispatch(actionSetFilter('movieQuery', input));
   };
 
   return (

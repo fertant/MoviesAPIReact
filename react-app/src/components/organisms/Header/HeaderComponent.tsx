@@ -1,16 +1,15 @@
 import React, { FunctionComponent } from 'react';
+import { useDispatch } from 'react-redux';
 
 import CopyrightComponent from '../../atoms/Copyright/CopyrightComponent';
 import { BlackButton } from '../../atoms/Button/Button';
 import SearchComponent from '../../molecules/Search/SearchComponent';
-import { useDispatch } from '../../../hooks/CustomHooks';
-import { actionControlVisibility } from '../../../context/AppContext';
+import { actionControlVisibility } from '../../../actions/Actions';
 import {
   TopNavWrapper,
   HeaderBackground,
   HeaderWrapper,
   HeaderElementsWrapper,
-  HeaderMovieDetails,
 } from './HeaderElements';
 import MemoMovieDetailsComponent from '../../molecules/MovieDetails/MovieDetailsComponent';
 
