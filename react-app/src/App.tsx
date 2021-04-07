@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import styles from './App.scss';
+import { ThemeProvider } from 'styled-components';
 
-import ComponentTitle from './components/ComponentTitle/ComponentTitle';
-import CreateElementTitle from './components/CreateElementTitle/CreateElementTitle';
-import FunctionalComponentTitle from './components/FunctionalComponentTitle/FunctionalComponentTitle';
-import PureComponentTitle from './components/PureComponentTitle/PureComponentTitle';
+import './App.scss';
+import theme from './components/theme/Theme';
+
+import HeaderComponent from './components/organisms/Header/HeaderComponent';
+import MovieListWrapperComponent from './components/templates/MovieList/MovieListWrapperComponent';
+import FooterComponent from './components/organisms/Footer/FooterComponent';
+import DialogComponent from './components/molecules/Dialog/DialogComponent';
+import AppProvider from './context/AppContext';
+import MovieProvider from './context/MovieContext';
 
 function App() {
   return (
-    <div className={styles.app}>
-      <header className={styles.appHeader}>
-        <img src={logo} className={styles.appLogo} alt="logo" />
-        <p>
-          Test gereral React components.
-        </p>
-      </header>
-      <ComponentTitle type="Class Component" />
-      <CreateElementTitle type="CreateElement" />
-      <FunctionalComponentTitle type="Functional Component" />
-      <PureComponentTitle type="Class Pure Component" />
+    <div>
+      <ThemeProvider theme={theme}>
+        <AppProvider>
+          <MovieProvider>
+            <HeaderComponent />
+            <MovieListWrapperComponent />
+            <FooterComponent />
+            <DialogComponent type="add" />
+            <DialogComponent type="edit" />
+            <DialogComponent type="delete" />
+          </MovieProvider>
+        </AppProvider>
+      </ThemeProvider>
     </div>
   );
 }
