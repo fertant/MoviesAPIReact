@@ -19,7 +19,8 @@ export interface IMovieListAction {
 
 export interface IMovieAction {
   type: string,
-  movie: IMovie,
+  movie?: IMovie,
+  id?: number,
 }
 
 export interface IRequestAction {

@@ -54,7 +54,7 @@ const EditMovieForm: FunctionComponent<IMovieProps> = () => {
       movieUrl: movie.img,
       genre: movie.genre.map((item) => ({ value: item, label: item })),
       overview: movie.subtitle,
-      runtime: movie.duration ?? movie.duration.toString(),
+      runtime: movie.duration !== null ?? movie.duration.toString(),
     },
     validationSchema: schema,
     onSubmit: (value: IMovieValues) => {

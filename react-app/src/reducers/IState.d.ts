@@ -24,6 +24,7 @@ export interface IMoviesList {
 
 export interface ISelectedMovie {
   selectedMovie: IMovie | null,
+  selectedMovieDetail: number,
 }
 
 export interface IMovieDetail {
