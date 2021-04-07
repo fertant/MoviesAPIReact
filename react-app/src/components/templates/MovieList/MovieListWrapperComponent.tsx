@@ -2,7 +2,6 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { IMovie } from '../../molecules/MovieCard/IMovie';
 import { IMenuItem } from '../../molecules/Navigation/INavigation';
 import NavigationComponent from '../../molecules/Navigation/NavigationComponent';
 import MovieListComponent from '../../organisms/MovieList/MovieListComponent';
@@ -15,6 +14,7 @@ import {
   actionControlVisibility,
 } from '../../../actions/Actions';
 import HeaderComponent from '../../organisms/Header/HeaderComponent';
+import ErrorBoundary from '../../atoms/ErrorBoundary/ErrorBoundary';
 
 const filters: Array<IMenuItem> = [
   { title: 'All' },
@@ -45,7 +45,7 @@ const MovieListWrapperComponent: FunctionComponent = () => {
   }, [type, sort, query]);
 
   return (
-    <div>
+    <ErrorBoundary>
       <HeaderComponent />
       <MainWrapper>
         <NavigationComponent filters={filters} />
@@ -62,7 +62,7 @@ const MovieListWrapperComponent: FunctionComponent = () => {
           return <NoMovieFound>No Movie Found</NoMovieFound>;
         })()}
       </MainWrapper>
-    </div>
+    </ErrorBoundary>
   );
 };
 
