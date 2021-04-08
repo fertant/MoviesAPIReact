@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { useFormik } from 'formik';
 import { useSelector, useDispatch } from 'react-redux';
-import * as yup from 'yup';
 
 import { IMovie } from '../MovieCard/IMovie';
 import { Button, BlackButtonWithBorder } from '../../atoms/Button/Button';
@@ -17,34 +16,11 @@ import {
 } from './Form';
 import { IMovieProps, ISelectValue, IMovieValues } from './IForm';
 import { actionUpdateMovie, actionControlVisibility } from '../../../actions/Actions';
+import schema from './FormValidationSchema';
 
 const EditMovieForm: FunctionComponent<IMovieProps> = () => {
   const movie: IMovie = useSelector(({ selectedMovie: { selectedMovie: movie } }) => movie);
   const dispatch = useDispatch();
-
-  const schema = yup.object({
-    title: yup
-      .string()
-      .required('Title is required'),
-    releaseDate: yup
-      .date()
-      .required('Release date is required'),
-    movieUrl: yup
-      .string()
-      .url('Image should have valid url')
-      .required('Image is required'),
-    genre: yup
-      .array()
-      .min(1, 'Genre should be at least one')
-      .required('Genre is required'),
-    overview: yup
-      .string()
-      .required('Description is required'),
-    runtime: yup
-      .number()
-      .min(30, 'Every movie should be at least 30 min long')
-      .required('Runtime is required'),
-  });
 
   const formik = useFormik({
     initialValues: {
@@ -54,7 +30,7 @@ const EditMovieForm: FunctionComponent<IMovieProps> = () => {
       movieUrl: movie.img,
       genre: movie.genre.map((item) => ({ value: item, label: item })),
       overview: movie.subtitle,
-      runtime: movie.duration ?? movie.duration.toString(),
+      runtime: movie.duration !== null ?? movie.duration.toString(),
     },
     validationSchema: schema,
     onSubmit: (value: IMovieValues) => {
@@ -83,6 +59,7 @@ const EditMovieForm: FunctionComponent<IMovieProps> = () => {
           name="movieId"
           type="text"
           placeholder="MO32820TH"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.movieId}
           readOnly
@@ -94,6 +71,7 @@ const EditMovieForm: FunctionComponent<IMovieProps> = () => {
           name="title"
           type="text"
           placeholder="Moana"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.title}
         />
@@ -107,6 +85,7 @@ const EditMovieForm: FunctionComponent<IMovieProps> = () => {
           name="releaseDate"
           type="text"
           placeholder="2018-03-31"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.releaseDate}
         />
@@ -120,6 +99,7 @@ const EditMovieForm: FunctionComponent<IMovieProps> = () => {
           name="movieUrl"
           type="text"
           placeholder="www.moana.com"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.movieUrl}
         />
@@ -153,6 +133,7 @@ const EditMovieForm: FunctionComponent<IMovieProps> = () => {
           name="overview"
           type="text"
           placeholder="Overview text"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.overview}
         />
@@ -166,6 +147,7 @@ const EditMovieForm: FunctionComponent<IMovieProps> = () => {
           name="runtime"
           type="text"
           placeholder="Runtime text"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.runtime}
         />
