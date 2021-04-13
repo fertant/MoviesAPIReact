@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
-import * as yup from 'yup';
 
 import { IMovie } from '../MovieCard/IMovie';
 import { Button, BlackButtonWithBorder } from '../../atoms/Button/Button';
@@ -17,45 +16,24 @@ import {
 } from './Form';
 import { IMovieProps, ISelectValue, IMovieValues } from './IForm';
 import { actionCreateMovie, actionControlVisibility } from '../../../actions/Actions';
+import { schema, Genre } from './FormValidationSchema';
 
 const AddMovieForm: FunctionComponent<IMovieProps> = () => {
   const dispatch = useDispatch();
-
-  const schema = yup.object({
-    title: yup
-      .string()
-      .required('Title is required'),
-    releaseDate: yup
-      .date()
-      .required('Release date is required'),
-    movieUrl: yup
-      .string()
-      .url('Image should have valid url')
-      .required('Image is required'),
-    genre: yup
-      .array()
-      .min(1, 'Genre should be at least one')
-      .required('Genre is required'),
-    overview: yup
-      .string()
-      .required('Description is required'),
-    runtime: yup
-      .number()
-      .min(30, 'Every movie should be at least 30 min long')
-      .required('Runtime is required'),
-  });
-
+  const options = Object
+    .entries(Genre)
+    .map((entry: Array<String>) => ({
+      label: entry[1],
+      value: entry[0],
+    }));
   const formik = useFormik({
     initialValues: {
-      title: 'Moana',
-      releaseDate: '2018-03-31',
-      movieUrl: 'www.moana.com',
-      genre: [
-        { value: 'comedy', label: 'Comedy' },
-        { value: 'horror', label: 'Horror' },
-      ],
-      overview: 'Overview text',
-      runtime: '60',
+      title: '',
+      releaseDate: '',
+      movieUrl: '',
+      genre: [],
+      overview: '',
+      runtime: '',
     },
     validationSchema: schema,
     onSubmit: (value: IMovieValues) => {
@@ -84,6 +62,7 @@ const AddMovieForm: FunctionComponent<IMovieProps> = () => {
           name="title"
           type="text"
           placeholder="Moana"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.title}
         />
@@ -97,6 +76,7 @@ const AddMovieForm: FunctionComponent<IMovieProps> = () => {
           name="releaseDate"
           type="text"
           placeholder="2018-03-31"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.releaseDate}
         />
@@ -107,6 +87,7 @@ const AddMovieForm: FunctionComponent<IMovieProps> = () => {
           name="movieUrl"
           type="text"
           placeholder="www.moana.com"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.movieUrl}
         />
@@ -120,13 +101,7 @@ const AddMovieForm: FunctionComponent<IMovieProps> = () => {
           id="genre"
           name="genre"
           isMulti
-          options={[
-            { value: 'documentary', label: 'Documentary' },
-            { value: 'comedy', label: 'Comedy' },
-            { value: 'horror', label: 'Horror' },
-            { value: 'crime', label: 'Crime' },
-            { value: 'action', label: 'Action & Adventure' },
-          ]}
+          options={options}
           defaultValue={formik.values.genre}
           onChange={(option: ISelectValue) => formik.setFieldValue('genre', option)}
         />
@@ -140,6 +115,7 @@ const AddMovieForm: FunctionComponent<IMovieProps> = () => {
           name="overview"
           type="text"
           placeholder="Overview text"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.overview}
         />
@@ -153,6 +129,7 @@ const AddMovieForm: FunctionComponent<IMovieProps> = () => {
           name="runtime"
           type="text"
           placeholder="60"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.runtime}
         />
