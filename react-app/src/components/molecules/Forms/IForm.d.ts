@@ -1,9 +1,3 @@
-import { IMovie } from '../MovieCard/IMovie';
-
-export interface IMovieProps {
-  movie: IMovie,
-}
-
 export interface ISelectValue {
   value: string,
   label: string,

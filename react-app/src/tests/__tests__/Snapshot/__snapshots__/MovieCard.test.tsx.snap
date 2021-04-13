@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test render Movie Card 1`] = `
+<div
+  className="sc-bdfBwQ cOTdta"
+>
+  <div
+    className="sc-gKsewC bYukru"
+    onClick={[Function]}
+  >
+    <span
+      className="sc-iBPRYJ jdGjQX"
+    />
+  </div>
+  <div
+    className="sc-pFZIQ dREdHp"
+  >
+    <button
+      className="sc-jrAGrp mvorh"
+      onClick={[Function]}
+    />
+    <button
+      className="sc-fubCfw bDxerx"
+      onClick={[Function]}
+    >
+      Edit
+    </button>
+    <button
+      className="sc-fubCfw bDxerx"
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </div>
+  <img
+    className="sc-eCssSg dgFBAc"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-gsTCUz jFfEYb"
+  >
+    <h1
+      className="sc-dlfnbm flxOHZ"
+    >
+      Moana
+    </h1>
+    <div
+      className="sc-hKgILt jgANG"
+    >
+      2020
+    </div>
+  </div>
+  <div
+    className="sc-jSgupP bCPCUk"
+  >
+    Horror
+  </div>
+</div>
+`;

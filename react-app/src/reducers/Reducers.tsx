@@ -18,13 +18,13 @@ import {
   IMovieDetail,
 } from './IState';
 
-const filtersState = {
+export const filtersState = {
   movieType: 'All',
   movieQuery: '',
   movieSort: 'yearOfRelease',
 };
 
-const modalsState = {
+export const modalsState = {
   add: false,
   edit: false,
   delete: false,
@@ -32,28 +32,28 @@ const modalsState = {
   alert: false,
 };
 
-const requestState = {
+export const requestState = {
   isLoading: true,
 };
 
-const moviesState = {
+export const moviesState = {
   moviesList: [],
 };
 
-const selectedMovieState = {
+export const selectedMovieState = {
   selectedMovie: null,
   selectedMovieDetail: 0,
 };
 
-const movieDetailState = {
+export const movieDetailState = {
   movieDetail: null,
 };
 
-const movieActionState = {
+export const movieActionState = {
   movieObject: null,
 };
 
-const modals = (state: IModal = modalsState, action: IControlAction) => {
+export const modals = (state: IModal = modalsState, action: IControlAction) => {
   switch (action.type) {
     case ActionTypes.MODAL_VISIBILITY: {
       const { modalType, visibility } = action;
@@ -64,7 +64,7 @@ const modals = (state: IModal = modalsState, action: IControlAction) => {
   }
 };
 
-const filters = (state: IFilter = filtersState, action: IFilterAction) => {
+export const filters = (state: IFilter = filtersState, action: IFilterAction) => {
   switch (action.type) {
     case ActionTypes.SET_FILTER: {
       const { filterType, filterSetting } = action;
@@ -75,7 +75,7 @@ const filters = (state: IFilter = filtersState, action: IFilterAction) => {
   }
 };
 
-const requestApi = (state: IRequestProcess = requestState, action: IRequestAction) => {
+export const requestApi = (state: IRequestProcess = requestState, action: IRequestAction) => {
   switch (action.type) {
     case ActionTypes.START_FILTER_REQUEST: {
       return { ...state, isLoading: true };
@@ -91,7 +91,7 @@ const requestApi = (state: IRequestProcess = requestState, action: IRequestActio
   }
 };
 
-const moviesList = (state: IMoviesList = moviesState, action: IMovieListAction) => {
+export const moviesList = (state: IMoviesList = moviesState, action: IMovieListAction) => {
   switch (action.type) {
     case ActionTypes.SET_MOVIES: {
       const { movies } = action;
@@ -102,11 +102,11 @@ const moviesList = (state: IMoviesList = moviesState, action: IMovieListAction) 
   }
 };
 
-const selectedMovie = (state: ISelectedMovie = selectedMovieState, action: IMovieAction) => {
+export const selectedMovie = (state: ISelectedMovie = selectedMovieState, action: IMovieAction) => {
   switch (action.type) {
     case ActionTypes.SELECT_MOVIE: {
       const { movie } = action;
-      return { ...state, selectedMovie: movie, selectedMovieId: movie.id };
+      return movie ? { ...state, selectedMovie: movie, selectedMovieId: movie.id } : { ...state };
     }
     case ActionTypes.SELECT_MOVIE_ID: {
       const { id } = action;
@@ -116,7 +116,8 @@ const selectedMovie = (state: ISelectedMovie = selectedMovieState, action: IMovi
       return state;
   }
 };
-const movieDetail = (state: IMovieDetail = movieDetailState, action: IMovieAction) => {
+
+export const movieDetail = (state: IMovieDetail = movieDetailState, action: IMovieAction) => {
   switch (action.type) {
     case ActionTypes.MOVIE_DETAIL: {
       const { movie } = action;
@@ -127,7 +128,7 @@ const movieDetail = (state: IMovieDetail = movieDetailState, action: IMovieActio
   }
 };
 
-const movieAction = (state: IMovieActionState = movieActionState, action: IMovieAction) => {
+export const movieAction = (state: IMovieActionState = movieActionState, action: IMovieAction) => {
   switch (action.type) {
     case ActionTypes.CREATE_MOVIE:
     case ActionTypes.EDIT_MOVIE:
@@ -140,7 +141,7 @@ const movieAction = (state: IMovieActionState = movieActionState, action: IMovie
   }
 };
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   modals,
   filters,
   moviesList,

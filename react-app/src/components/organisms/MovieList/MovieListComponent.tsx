@@ -9,8 +9,7 @@ const MovieListComponent: FunctionComponent<IMovieList> = ({ items }) => (
   <MoviesWrapper>
     {
       items.map((movie: IMovie) => (
-        <MovieCardComponent key={movie.id}
-                            item={movie}/>
+        <MovieCardComponent key={movie.id} item={movie} />
       ))
     }
   </MoviesWrapper>

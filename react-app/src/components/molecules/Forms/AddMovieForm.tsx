@@ -14,11 +14,11 @@ import {
   StyledSelect,
   FieldError,
 } from './Form';
-import { IMovieProps, ISelectValue, IMovieValues } from './IForm';
+import { ISelectValue, IMovieValues } from './IForm';
 import { actionCreateMovie, actionControlVisibility } from '../../../actions/Actions';
 import schema from './FormValidationSchema';
 
-const AddMovieForm: FunctionComponent<IMovieProps> = () => {
+const AddMovieForm: FunctionComponent = () => {
   const dispatch = useDispatch();
 
   const formik = useFormik({
