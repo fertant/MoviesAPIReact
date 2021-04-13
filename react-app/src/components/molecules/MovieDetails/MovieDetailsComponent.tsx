@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useSelector, useDispatch } from 'react-redux';
 
 import {
   MovieDetailsWrapper,
@@ -17,14 +18,14 @@ import {
   MovieRate,
   HeaderMovieDetails,
 } from './MovieDetails';
-import { MovieContext } from '../../../context/MovieContext';
-import { useSelector, useDispatch } from '../../../hooks/CustomHooks';
-import { actionControlVisibility } from '../../../context/AppContext';
+import { actionControlVisibility } from '../../../actions/Actions';
+import { IMovie } from '../MovieCard/IMovie';
 
 const MovieDetailsComponent: FunctionComponent = () => {
-  const { movieDetails } = useContext(MovieContext);
   const type = 'details';
-  const visible = useSelector(({ [type]: visibility }) => visibility);
+  let visible = useSelector(({ modals: { [type]: visibility } }) => visibility);
+  const movieDetails: IMovie = useSelector(({ movieDetail: { movieDetail: movie } }) => movie);
+  visible = movieDetails ? visible : false;
   const dispatch = useDispatch();
   const onClose = () => dispatch(actionControlVisibility(type, false));
 

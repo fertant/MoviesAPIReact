@@ -9,7 +9,7 @@ module.exports = merge(common, {
     contentBase: path.resolve(__dirname, '../dist'),
     open: true,
     clientLogLevel: 'silent',
-    port: 9000,
+    port: 9001,
     historyApiFallback: true,
     hot: true,
   },

@@ -11,7 +11,7 @@ export interface IMovie {
   rate?: number;
   duration: number;
   img?: string;
-  yearOfRelease: number;
+  yearOfRelease: string;
   genre: Array<string>
 }
 

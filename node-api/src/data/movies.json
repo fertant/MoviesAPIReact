@@ -17,25 +17,6 @@
       "runtime": 106
   },
   {
-      "id": 269149,
-      "title": "Zootopia",
-      "tagline": "Welcome to the urban jungle.",
-      "vote_average": 7.7,
-      "vote_count": 6795,
-      "release_date": "2016-02-11",
-      "poster_path": "https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg",
-      "overview": "Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery.",
-      "budget": 150000000,
-      "revenue": 1023784195,
-      "genres": [
-          "Animation",
-          "Adventure",
-          "Family",
-          "Comedy"
-      ],
-      "runtime": 108
-  },
-  {
       "id": 181808,
       "title": "Star Wars: The Last Jedi",
       "tagline": "The Saga Continues",
@@ -705,24 +686,6 @@
       "runtime": 115
   },
   {
-      "id": 78,
-      "title": "Blade Runner",
-      "tagline": "Man has made his match... now it's his problem.",
-      "vote_average": 7.9,
-      "vote_count": 5414,
-      "release_date": "1982-06-25",
-      "poster_path": "https://image.tmdb.org/t/p/w500/p64TtbZGCElxQHpAMWmDHkWJlH2.jpg",
-      "overview": "In the smog-choked dystopian Los Angeles of 2019, blade runner Rick Deckard is called out of retirement to terminate a quartet of replicants who have escaped to Earth seeking their creator for a way to extend their short life spans.",
-      "budget": 10000000,
-      "revenue": 0,
-      "genres": [
-          "Science Fiction",
-          "Drama",
-          "Thriller"
-      ],
-      "runtime": 117
-  },
-  {
       "id": 399035,
       "title": "The Commuter",
       "tagline": "Lives are on the line",
@@ -1341,24 +1304,6 @@
       "runtime": 113
   },
   {
-      "id": 807,
-      "title": "Se7en",
-      "tagline": "Seven deadly sins. Seven ways to die.",
-      "vote_average": 8.2,
-      "vote_count": 7432,
-      "release_date": "1995-09-22",
-      "poster_path": "https://image.tmdb.org/t/p/w500/8zw8IL4zEPjkh8Aysdcd0FwGMb0.jpg",
-      "overview": "Two homicide detectives are on a desperate hunt for a serial killer whose crimes are based on the \"seven deadly sins\" in this dark and haunting film that takes viewers from the tortured remains of one victim to the next. The seasoned Det. Sommerset researches each sin in an effort to get inside the killer's mind, while his novice partner, Mills, scoffs at his efforts to unravel the case.",
-      "budget": 33000000,
-      "revenue": 327311859,
-      "genres": [
-          "Crime",
-          "Mystery",
-          "Thriller"
-      ],
-      "runtime": 127
-  },
-  {
       "id": 297762,
       "title": "Wonder Woman",
       "tagline": "Power. Grace. Wisdom. Wonder.",
@@ -1430,24 +1375,6 @@
       "runtime": 130
   },
   {
-      "id": 58,
-      "title": "Pirates of the Caribbean: Dead Man's Chest",
-      "tagline": "Jack is back!",
-      "vote_average": 7.1,
-      "vote_count": 6716,
-      "release_date": "2006-06-20",
-      "poster_path": "https://image.tmdb.org/t/p/w500/waFr5RVKaQ9dzOt3nQuIVB1FiPu.jpg",
-      "overview": "Captain Jack Sparrow works his way out of a blood debt with the ghostly Davey Jones, he also attempts to avoid eternal damnation.",
-      "budget": 200000000,
-      "revenue": 1065659812,
-      "genres": [
-          "Adventure",
-          "Fantasy",
-          "Action"
-      ],
-      "runtime": 151
-  },
-  {
       "id": 177677,
       "title": "Mission: Impossible - Rogue Nation",
       "tagline": "Desperate Times. Desperate Measures.",
@@ -1481,24 +1408,6 @@
           "Science Fiction"
       ],
       "runtime": 108
-  },
-  {
-      "id": 8587,
-      "title": "The Lion King",
-      "tagline": "Life's greatest adventure is finding your place in the Circle of Life.",
-      "vote_average": 8.1,
-      "vote_count": 7079,
-      "release_date": "1994-06-23",
-      "poster_path": "https://image.tmdb.org/t/p/w500/bKPtXn9n4M4s8vvZrbw40mYsefB.jpg",
-      "overview": "A young lion cub named Simba can't wait to be king. But his uncle craves the title for himself and will stop at nothing to get it.",
-      "budget": 45000000,
-      "revenue": 987483777,
-      "genres": [
-          "Family",
-          "Animation",
-          "Drama"
-      ],
-      "runtime": 89
   },
   {
       "id": 122,
@@ -1572,25 +1481,6 @@
           "War"
       ],
       "runtime": 140
-  },
-  {
-      "id": 105,
-      "title": "Back to the Future",
-      "tagline": "He's the only kid ever to get into trouble before he was born.",
-      "vote_average": 8.1,
-      "vote_count": 7789,
-      "release_date": "1985-07-03",
-      "poster_path": "https://image.tmdb.org/t/p/w500/pTpxQB1N0waaSc3OSn0e9oc8kx9.jpg",
-      "overview": "Eighties teenager Marty McFly is accidentally sent back in time to 1955, inadvertently disrupting his parents' first meeting and attracting his mother's romantic interest. Marty must repair the damage to history by rekindling his parents' romance and - with the help of his eccentric inventor friend Doc Brown - return to 1985.",
-      "budget": 19000000,
-      "revenue": 381109762,
-      "genres": [
-          "Adventure",
-          "Comedy",
-          "Science Fiction",
-          "Family"
-      ],
-      "runtime": 116
   },
   {
       "id": 140607,
@@ -1683,24 +1573,6 @@
       "runtime": 169
   },
   {
-      "id": 862,
-      "title": "Toy Story",
-      "tagline": "",
-      "vote_average": 7.8,
-      "vote_count": 6995,
-      "release_date": "1995-10-30",
-      "poster_path": "https://image.tmdb.org/t/p/w500/rhIRbceoE9lR4veEXuwCC2wARtG.jpg",
-      "overview": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
-      "budget": 30000000,
-      "revenue": 373554033,
-      "genres": [
-          "Animation",
-          "Comedy",
-          "Family"
-      ],
-      "runtime": 81
-  },
-  {
       "id": 156022,
       "title": "The Equalizer",
       "tagline": "What do you see when you look at me?",
@@ -1769,24 +1641,6 @@
           "Thriller"
       ],
       "runtime": 102
-  },
-  {
-      "id": 11,
-      "title": "Star Wars",
-      "tagline": "A long time ago in a galaxy far, far away...",
-      "vote_average": 8.1,
-      "vote_count": 8516,
-      "release_date": "1977-05-25",
-      "poster_path": "https://image.tmdb.org/t/p/w500/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg",
-      "overview": "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.",
-      "budget": 11000000,
-      "revenue": 775398007,
-      "genres": [
-          "Adventure",
-          "Action",
-          "Science Fiction"
-      ],
-      "runtime": 121
   },
   {
       "id": 315635,
@@ -1915,23 +1769,6 @@
           "Action"
       ],
       "runtime": 179
-  },
-  {
-      "id": 238,
-      "title": "The Godfather",
-      "tagline": "An offer you can't refuse.",
-      "vote_average": 8.5,
-      "vote_count": 7437,
-      "release_date": "1972-03-14",
-      "poster_path": "https://image.tmdb.org/t/p/w500/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg",
-      "overview": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
-      "budget": 6000000,
-      "revenue": 245066411,
-      "genres": [
-          "Drama",
-          "Crime"
-      ],
-      "runtime": 175
   },
   {
       "id": 381288,
@@ -5052,24 +4889,6 @@
       "runtime": 145
   },
   {
-      "id": 97630,
-      "title": "Zero Dark Thirty",
-      "tagline": "The Greatest Manhunt in History",
-      "vote_average": 6.7,
-      "vote_count": 2028,
-      "release_date": "2012-12-19",
-      "poster_path": "https://image.tmdb.org/t/p/w500/yg6IDNucLAEj7E5loTyTnUW2pgb.jpg",
-      "overview": "A chronicle of the decade-long hunt for al-Qaeda terrorist leader Osama bin Laden after the September 2001 attacks, and his death at the hands of the Navy S.E.A.L. Team 6 in May, 2011.",
-      "budget": 40000000,
-      "revenue": 132820716,
-      "genres": [
-          "Thriller",
-          "Drama",
-          "History"
-      ],
-      "runtime": 157
-  },
-  {
       "id": 227159,
       "title": "Horrible Bosses 2",
       "tagline": "New Crime. Same Tools.",
@@ -6019,24 +5838,6 @@
           "Family"
       ],
       "runtime": 153
-  },
-  {
-      "id": 254,
-      "title": "King Kong",
-      "tagline": "The eighth wonder of the world.",
-      "vote_average": 6.6,
-      "vote_count": 3064,
-      "release_date": "2005-12-12",
-      "poster_path": "https://image.tmdb.org/t/p/w500/iQYMVoI9QE2wQCOSrxhiBYd4v0w.jpg",
-      "overview": "In 1933 New York, an overly ambitious movie producer coerces his cast and hired ship crew to travel to mysterious Skull Island, where they encounter Kong, a giant ape who is immediately smitten with the leading lady.",
-      "budget": 207000000,
-      "revenue": 550000000,
-      "genres": [
-          "Adventure",
-          "Drama",
-          "Action"
-      ],
-      "runtime": 187
   },
   {
       "id": 8392,
@@ -9671,24 +9472,6 @@
       "runtime": 76
   },
   {
-      "id": 47971,
-      "title": "xXx: Return of Xander Cage",
-      "tagline": "There are no more patriots, just rebels and tyrants.",
-      "vote_average": 5.5,
-      "vote_count": 1834,
-      "release_date": "2017-01-13",
-      "poster_path": "https://image.tmdb.org/t/p/w500/yNsdyNbQqaKN0TQxkHMws2KLTJ6.jpg",
-      "overview": "Extreme athlete turned government operative Xander Cage comes out of self-imposed exile, thought to be long dead, and is set on a collision course with deadly alpha warrior Xiang and his team in a race to recover a sinister and seemingly unstoppable weapon known as Pandora's Box. Recruiting an all-new group of thrill-seeking cohorts, Xander finds himself enmeshed in a deadly conspiracy that points to collusion at the highest levels of world governments.",
-      "budget": 85000000,
-      "revenue": 346147658,
-      "genres": [
-          "Action",
-          "Adventure",
-          "Crime"
-      ],
-      "runtime": 107
-  },
-  {
       "id": 670,
       "title": "Oldboy",
       "tagline": "15 years of imprisonment, five days of vengeance",
@@ -10138,23 +9921,6 @@
           "Romance"
       ],
       "runtime": 95
-  },
-  {
-      "id": 19908,
-      "title": "Zombieland",
-      "tagline": "This place is so dead",
-      "vote_average": 7.2,
-      "vote_count": 4509,
-      "release_date": "2009-10-07",
-      "poster_path": "https://image.tmdb.org/t/p/w500/vUzzDpVrab1BOG3ogxhRGfLN94d.jpg",
-      "overview": "Columbus has made a habit of running from what scares him. Tallahassee doesn't have fears. If he did, he'd kick their ever-living ass. In a world overrun by zombies, these two are perfectly evolved survivors. But now, they're about to stare down the most terrifying prospect of all: each other.",
-      "budget": 23600000,
-      "revenue": 102391382,
-      "genres": [
-          "Comedy",
-          "Horror"
-      ],
-      "runtime": 88
   },
   {
       "id": 381719,
@@ -13246,25 +13012,6 @@
           "Science Fiction"
       ],
       "runtime": 94
-  },
-  {
-      "id": 1949,
-      "title": "Zodiac",
-      "tagline": "There's more than one way to lose your life to a killer.",
-      "vote_average": 7.3,
-      "vote_count": 2780,
-      "release_date": "2007-03-02",
-      "poster_path": "https://image.tmdb.org/t/p/w500/bgLyOROfFQI3FqYL7jQbiaV8lkN.jpg",
-      "overview": "The true story of the investigation of the \"Zodiac Killer\", a serial killer who terrified the San Francisco Bay Area, taunting police with his ciphers and letters.  The case becomes an obsession for four men as their lives and careers are built and destroyed by the endless trail of clues.",
-      "budget": 65000000,
-      "revenue": 84785914,
-      "genres": [
-          "Crime",
-          "Drama",
-          "Mystery",
-          "Thriller"
-      ],
-      "runtime": 157
   },
   {
       "id": 1018,
@@ -17272,26 +17019,6 @@
       "runtime": 105
   },
   {
-      "id": 72190,
-      "title": "World War Z",
-      "tagline": "Remember Philly!",
-      "vote_average": 6.7,
-      "vote_count": 6754,
-      "release_date": "2013-06-20",
-      "poster_path": "https://image.tmdb.org/t/p/w500/Ha5t0J21eyiq6Az1EXzx0iwsGH.jpg",
-      "overview": "Life for former United Nations investigator Gerry Lane and his family seems content. Suddenly, the world is plagued by a mysterious infection turning whole human populations into rampaging mindless zombies. After barely escaping the chaos, Lane is persuaded to go on a mission to investigate this disease. What follows is a perilous trek around the world where Lane must brave horrific dangers and long odds to find answers before human civilization falls.",
-      "budget": 200000000,
-      "revenue": 531865000,
-      "genres": [
-          "Action",
-          "Drama",
-          "Horror",
-          "Science Fiction",
-          "Thriller"
-      ],
-      "runtime": 116
-  },
-  {
       "id": 9475,
       "title": "Scent of a Woman",
       "tagline": "Col. Frank Slade has a very special plan for the weekend!",
@@ -18891,24 +18618,6 @@
       "runtime": 105
   },
   {
-      "id": 667,
-      "title": "You Only Live Twice",
-      "tagline": "You Only Live Twice...and Twice is the only way to live!",
-      "vote_average": 6.5,
-      "vote_count": 675,
-      "release_date": "1967-06-12",
-      "poster_path": "https://image.tmdb.org/t/p/w500/7dnsJZniZK1Hbc9mOFDYa5W0dHi.jpg",
-      "overview": "A mysterious space craft kidnaps a Russian and American space capsule and brings the world on the verge of another World War. James Bond investigates the case in Japan and meets with his archenemy Blofeld. The fifth film from the legendary James Bond series starring Sean Connery as the British super agent.",
-      "budget": 9500000,
-      "revenue": 111584787,
-      "genres": [
-          "Action",
-          "Thriller",
-          "Adventure"
-      ],
-      "runtime": 117
-  },
-  {
       "id": 49049,
       "title": "Dredd",
       "tagline": "Judgement is coming",
@@ -19664,27 +19373,6 @@
       "runtime": 100
   },
   {
-      "id": 11679,
-      "title": "xXx: State of the Union",
-      "tagline": "Prepare for the next level",
-      "vote_average": 4.7,
-      "vote_count": 699,
-      "release_date": "2005-04-27",
-      "poster_path": "https://image.tmdb.org/t/p/w500/yWKeTc8cxSZoDy5X45q3c64iN7v.jpg",
-      "overview": "Ice Cube stars as Darius Stone, a thrill-seeking troublemaker whose criminal record and extreme sports obsession make him the perfect candidate to be the newest XXX agent. He must save the U.S. government from a deadly conspiracy led by five-star general and Secretary of Defense George Deckert (played by Willem Dafoe).",
-      "budget": 60000000,
-      "revenue": 71073932,
-      "genres": [
-          "Action",
-          "Adventure",
-          "Crime",
-          "Drama",
-          "Mystery",
-          "Thriller"
-      ],
-      "runtime": 101
-  },
-  {
       "id": 1581,
       "title": "The Holiday",
       "tagline": "It's Christmas Eve and we are going to go celebrate being young and being alive.",
@@ -19804,24 +19492,6 @@
           "Fantasy"
       ],
       "runtime": 99
-  },
-  {
-      "id": 7451,
-      "title": "xXx",
-      "tagline": "A New Breed Of Secret Agent.",
-      "vote_average": 5.8,
-      "vote_count": 1772,
-      "release_date": "2002-08-09",
-      "poster_path": "https://image.tmdb.org/t/p/w500/fPHNTG1OXFBQ6aEVO7Lv8tSgfrY.jpg",
-      "overview": "Xander Cage is your standard adrenaline junkie with no fear and a lousy attitude. When the US Government \"recruits\" him to go on a mission, he's not exactly thrilled. His mission: to gather information on an organization that may just be planning the destruction of the world, led by the nihilistic Yorgi.",
-      "budget": 70000000,
-      "revenue": 277448382,
-      "genres": [
-          "Action",
-          "Adventure",
-          "Thriller"
-      ],
-      "runtime": 124
   },
   {
       "id": 62211,
@@ -19984,23 +19654,6 @@
           "Comedy"
       ],
       "runtime": 91
-  },
-  {
-      "id": 19,
-      "title": "Metropolis",
-      "tagline": "There can be no understanding between the hands and the brain unless the heart acts as mediator.",
-      "vote_average": 8.1,
-      "vote_count": 837,
-      "release_date": "1927-01-10",
-      "poster_path": "https://image.tmdb.org/t/p/w500/qriaeUUwdmlgethK3aSAx68mG05.jpg",
-      "overview": "In a futuristic city sharply divided between the working class and the city planners, the son of the city's mastermind falls in love with a working class prophet who predicts the coming of a savior to mediate their differences.",
-      "budget": 92620000,
-      "revenue": 650422,
-      "genres": [
-          "Drama",
-          "Science Fiction"
-      ],
-      "runtime": 153
   },
   {
       "id": 302946,
@@ -22966,23 +22619,6 @@
           "Family"
       ],
       "runtime": 93
-  },
-  {
-      "id": 10661,
-      "title": "You Don't Mess with the Zohan",
-      "tagline": "Lather. Rinse. Save the world.",
-      "vote_average": 5.5,
-      "vote_count": 1354,
-      "release_date": "2008-06-05",
-      "poster_path": "https://image.tmdb.org/t/p/w500/3n9FYKLJVqwrZ7Wf96eoF2cAowU.jpg",
-      "overview": "An Israeli counterterrorism soldier with a secretly fabulous ambition to become a Manhattan hairstylist. Zohan's desire runs so deep that he'll do anything -- including faking his own death and going head-to-head with an Arab cab driver -- to make his dreams come true.",
-      "budget": 90000000,
-      "revenue": 201596308,
-      "genres": [
-          "Comedy",
-          "Action"
-      ],
-      "runtime": 113
   },
   {
       "id": 3563,
@@ -39965,24 +39601,6 @@
       "runtime": 108
   },
   {
-      "id": 57165,
-      "title": "Wrath of the Titans",
-      "tagline": "Feel the Wrath",
-      "vote_average": 5.5,
-      "vote_count": 1804,
-      "release_date": "2012-03-27",
-      "poster_path": "https://image.tmdb.org/t/p/w500/Albfq3ziSCQVyh5PzMSsFmmgHmy.jpg",
-      "overview": "A decade after his heroic defeat of the monstrous Kraken, Perseus-the demigod son of Zeus-is attempting to live a quieter life as a village fisherman and the sole parent to his 10-year old son, Helius. Meanwhile, a struggle for supremacy rages between the gods and the Titans. Dangerously weakened by humanity's lack of devotion, the gods are losing control of the imprisoned Titans and their ferocious leader, Kronos, father of the long-ruling brothers Zeus, Hades and Poseidon.",
-      "budget": 150000000,
-      "revenue": 301000000,
-      "genres": [
-          "Fantasy",
-          "Adventure",
-          "Action"
-      ],
-      "runtime": 99
-  },
-  {
       "id": 15765,
       "title": "What's Love Got to Do with It",
       "tagline": "Who needs a heart when a heart can be broken?",
@@ -44976,23 +44594,6 @@
       "runtime": 96
   },
   {
-      "id": 143,
-      "title": "All Quiet on the Western Front",
-      "tagline": "They left for war as boys never to return as men.",
-      "vote_average": 7.6,
-      "vote_count": 216,
-      "release_date": "1930-04-29",
-      "poster_path": "https://image.tmdb.org/t/p/w500/9gn5ce3B2vOpk9pOGeUjmFecIo5.jpg",
-      "overview": "A young soldier faces profound disillusionment in the soul-destroying horror of World War I. Together with several other young German soldiers, he experiences the horrors of war, such evil of which he had not conceived of when signing up to fight. They eventually become sad, tormented, and confused of their purpose.",
-      "budget": 1250000,
-      "revenue": 0,
-      "genres": [
-          "Drama",
-          "War"
-      ],
-      "runtime": 133
-  },
-  {
       "id": 25643,
       "title": "Love Happens",
       "tagline": "Sometimes when you least expect it...",
@@ -47451,24 +47052,6 @@
       "runtime": 111
   },
   {
-      "id": 3035,
-      "title": "Frankenstein",
-      "tagline": "The man who made a monster.",
-      "vote_average": 7.4,
-      "vote_count": 395,
-      "release_date": "1931-11-21",
-      "poster_path": "https://image.tmdb.org/t/p/w500/wB58wlBAr6484Wm6VyFDqSD8VOJ.jpg",
-      "overview": "Henry Frankenstein is a doctor who is trying to discover a way to make the dead walk. He succeeds and creates a monster that has to deal with living again.",
-      "budget": 291000,
-      "revenue": 12000000,
-      "genres": [
-          "Drama",
-          "Horror",
-          "Science Fiction"
-      ],
-      "runtime": 71
-  },
-  {
       "id": 451,
       "title": "Leaving Las Vegas",
       "tagline": "I Love You... The Way You Are.",
@@ -47835,24 +47418,6 @@
           "Comedy"
       ],
       "runtime": 100
-  },
-  {
-      "id": 185567,
-      "title": "Zulu",
-      "tagline": "",
-      "vote_average": 6.7,
-      "vote_count": 200,
-      "release_date": "2013-12-04",
-      "poster_path": "https://image.tmdb.org/t/p/w500/xg7Dh7mjevDgznqw9JHYccNo9ZQ.jpg",
-      "overview": "As a child, Ali Neuman narrowly escaped being murdered by Inkhata, a militant political party at war with Nelson Mandela's African National Congress. Only he and his mother survived the carnage of those years. But as with many survivors, the psychological scars remain.",
-      "budget": 16000000,
-      "revenue": 0,
-      "genres": [
-          "Crime",
-          "Drama",
-          "Thriller"
-      ],
-      "runtime": 110
   },
   {
       "id": 284293,
@@ -48546,22 +48111,6 @@
           "Thriller"
       ],
       "runtime": 127
-  },
-  {
-      "id": 138,
-      "title": "Dracula",
-      "tagline": "The story of the strangest passion the world has ever known!",
-      "vote_average": 7.2,
-      "vote_count": 329,
-      "release_date": "1931-02-12",
-      "poster_path": "https://image.tmdb.org/t/p/w500/hA9kQrIwDHJKl1pt8GpJdDnBzim.jpg",
-      "overview": "The legend of vampire Count Dracula begins here with this original 1931 Dracula film from Bela Lugosi.",
-      "budget": 355000,
-      "revenue": 0,
-      "genres": [
-          "Horror"
-      ],
-      "runtime": 72
   },
   {
       "id": 13700,

@@ -1,21 +1,21 @@
 import React, { FunctionComponent } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { useSelector, useDispatch } from '../../../hooks/CustomHooks';
-import { actionControlVisibility } from '../../../context/AppContext';
+import { actionControlVisibility } from '../../../actions/Actions';
 import { IModalProps } from './IDialog';
 import {
   Overlay,
   Dialog,
   DialogHeader,
-  DialogTitle,
   CloseButton,
   DialogBody,
-  DialogFooter,
 } from './Dialog';
-import { Button, BlackButtonWithBorder } from '../../atoms/Button/Button';
+import EditMovieForm from '../Forms/EditMovieForm';
+import AddMovieForm from '../Forms/AddMovieForm';
+import DeleteMovieForm from '../Forms/DeleteMovieForm';
 
 const DialogComponent: FunctionComponent<IModalProps> = ({ type }) => {
-  const visible = useSelector(({ [type]: visibility }) => visibility);
+  const visible = useSelector(({ modals: { [type]: visibility } }) => visibility);
   const dispatch = useDispatch();
   const onClose = () => dispatch(actionControlVisibility(type, false));
 
@@ -23,22 +23,22 @@ const DialogComponent: FunctionComponent<IModalProps> = ({ type }) => {
     <Overlay>
       <Dialog>
         <DialogHeader>
-          <DialogTitle>
-            {type.toUpperCase()}
-            &nbsp;
-            MOVIE
-          </DialogTitle>
           <CloseButton onClick={onClose}>˟</CloseButton>
         </DialogHeader>
         <DialogBody>
-          I am &quot;
-          {type}
-          &quot; dialog
+          {(() => {
+            switch (type) {
+              case 'edit':
+                return <EditMovieForm />;
+              case 'add':
+                return <AddMovieForm />;
+              case 'delete':
+                return <DeleteMovieForm />;
+              default:
+                return '';
+            }
+          })()}
         </DialogBody>
-        <DialogFooter>
-          <BlackButtonWithBorder>RESET</BlackButtonWithBorder>
-          <Button onClick={onClose}>SUBMIT</Button>
-        </DialogFooter>
       </Dialog>
     </Overlay>
   );

@@ -15,7 +15,8 @@ export const Overlay = styled.div`
 
 export const Dialog = styled.div`
   width: 800px;
-  height: 350px;
+  height: 90vh;
+  overflow: scroll;
   background: ${props => props.theme.color_f};
   display: flex;
   flex-direction: column;
@@ -25,13 +26,6 @@ export const Dialog = styled.div`
 export const DialogHeader = styled.div`
   height: 10%;
   display: flex;
-`;
-
-export const DialogTitle = styled.div`
-  margin: 60px 0 0 80px;
-  font-size: 24px;
-  font-weight: 100;
-  text-transform: uppercase;
 `;
 
 export const CloseButton = styled.button`
@@ -53,15 +47,6 @@ export const DialogBody = styled.div`
   justify-content: center;
   align-items: center;
   height: 75%;
-`;
-
-export const DialogFooter = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 75%;
-  gap: 1rem;
-  margin: 20px 60px 60px auto;
 `;
 
 export default Overlay;
