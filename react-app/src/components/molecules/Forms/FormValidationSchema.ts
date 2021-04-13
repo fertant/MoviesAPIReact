@@ -1,5 +1,13 @@
 import * as yup from 'yup';
 
+export const Genre: Object = {
+  documentary: 'Documentary',
+  comedy: 'Comedy',
+  horror: 'Horror',
+  crime: 'Crime',
+  action: 'Action & Adventure',
+};
+
 export const schema = yup.object({
   title: yup
     .string()

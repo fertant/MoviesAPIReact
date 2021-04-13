@@ -16,11 +16,16 @@ import {
 } from './Form';
 import { IMovieProps, ISelectValue, IMovieValues } from './IForm';
 import { actionCreateMovie, actionControlVisibility } from '../../../actions/Actions';
-import schema from './FormValidationSchema';
+import { schema, Genre } from './FormValidationSchema';
 
 const AddMovieForm: FunctionComponent<IMovieProps> = () => {
   const dispatch = useDispatch();
-
+  const options = Object
+    .entries(Genre)
+    .map((entry: Array<String>) => ({
+      label: entry[1],
+      value: entry[0],
+    }));
   const formik = useFormik({
     initialValues: {
       title: '',
@@ -96,13 +101,7 @@ const AddMovieForm: FunctionComponent<IMovieProps> = () => {
           id="genre"
           name="genre"
           isMulti
-          options={[
-            { value: 'documentary', label: 'Documentary' },
-            { value: 'comedy', label: 'Comedy' },
-            { value: 'horror', label: 'Horror' },
-            { value: 'crime', label: 'Crime' },
-            { value: 'action', label: 'Action & Adventure' },
-          ]}
+          options={options}
           defaultValue={formik.values.genre}
           onChange={(option: ISelectValue) => formik.setFieldValue('genre', option)}
         />
