@@ -16,11 +16,17 @@ import {
 } from './Form';
 import { ISelectValue, IMovieValues } from './IForm';
 import { actionUpdateMovie, actionControlVisibility } from '../../../actions/Actions';
-import schema from './FormValidationSchema';
+import { schema, Genre } from './FormValidationSchema';
 
 const EditMovieForm: FunctionComponent = () => {
   const movie: IMovie = useSelector(({ selectedMovie: { selectedMovie: movie } }) => movie);
   const dispatch = useDispatch();
+  const options = Object
+    .entries(Genre)
+    .map((entry: Array<String>) => ({
+      label: entry[1],
+      value: entry[0],
+    }));
 
   const formik = useFormik({
     initialValues: {
@@ -113,13 +119,7 @@ const EditMovieForm: FunctionComponent = () => {
           id="genre"
           name="genre"
           isMulti
-          options={[
-            { value: 'documentary', label: 'Documentary' },
-            { value: 'comedy', label: 'Comedy' },
-            { value: 'horror', label: 'Horror' },
-            { value: 'crime', label: 'Crime' },
-            { value: 'action', label: 'Action & Adventure' },
-          ]}
+          options={options}
           defaultValue={formik.values.genre}
           onChange={(option: ISelectValue) => formik.setFieldValue('genre', option)}
         />
