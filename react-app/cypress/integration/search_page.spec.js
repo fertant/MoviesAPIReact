@@ -8,7 +8,8 @@ context('Movies page', () => {
 
   it('Count movies in DOM', () => {
     cy.get('.movie-listing>div')
-    .siblings().should('have.length', 10)
+      .siblings()
+      .should('have.length', 10)
   })
 
   it('Filter by type', () => {
