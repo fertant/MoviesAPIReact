@@ -40,7 +40,7 @@ exports[`Test render Movie Card 1`] = `
     className="sc-gsTCUz jFfEYb"
   >
     <h1
-      className="sc-dlfnbm flxOHZ"
+      className="sc-dlfnbm flxOHZ title"
     >
       Moana
     </h1>
@@ -51,7 +51,7 @@ exports[`Test render Movie Card 1`] = `
     </div>
   </div>
   <div
-    className="sc-jSgupP bCPCUk"
+    className="sc-jSgupP bCPCUk genre"
   >
     Horror
   </div>

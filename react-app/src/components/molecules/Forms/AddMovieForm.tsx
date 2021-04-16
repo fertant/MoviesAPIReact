@@ -14,11 +14,11 @@ import {
   StyledSelect,
   FieldError,
 } from './Form';
-import { ISelectValue, IMovieValues } from './IForm';
-import { actionCreateMovie, actionControlVisibility } from '../../../actions/Actions';
+import { ISelectValue, IMovieValues, IAddMovieProps } from './IForm';
+import { actionControlVisibility } from '../../../actions/Actions';
 import { schema, Genre } from './FormValidationSchema';
 
-const AddMovieForm: FunctionComponent = () => {
+const AddMovieForm: FunctionComponent<IAddMovieProps> = ({ addMovieHandler }) => {
   const dispatch = useDispatch();
   const options = Object
     .entries(Genre)
@@ -46,10 +46,9 @@ const AddMovieForm: FunctionComponent = () => {
         duration: Number(value.runtime),
         img: value.movieUrl,
         yearOfRelease: value.releaseDate,
-        genre: value.genre.map((item) => (item.value)),
+        genre: value.genre ? value.genre.map((item) => (item.value)) : [],
       };
-      dispatch(actionCreateMovie(updatedMovie));
-      dispatch(actionControlVisibility('add', false));
+      addMovieHandler(updatedMovie);
     },
   });
 
@@ -86,7 +85,7 @@ const AddMovieForm: FunctionComponent = () => {
         <FieldText
           name="movieUrl"
           type="text"
-          placeholder="www.moana.com"
+          placeholder="http://www.google.com"
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.movieUrl}

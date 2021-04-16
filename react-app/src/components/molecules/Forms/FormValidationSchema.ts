@@ -19,10 +19,6 @@ export const schema = yup.object({
     .string()
     .url('Image should have valid url')
     .required('Image is required'),
-  genre: yup
-    .array()
-    .min(1, 'Genre should be at least one')
-    .required('Genre is required'),
   overview: yup
     .string()
     .required('Description is required'),

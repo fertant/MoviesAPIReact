@@ -1,45 +1,56 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
-import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import { act } from 'react-dom/test-utils';
+import {
+  render,
+  fireEvent,
+  screen,
+  waitFor,
+} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import AddMovieForm from '../../../components/molecules/Forms/AddMovieForm';
 import theme from '../../../components/theme/Theme';
 import * as actions from '../../../actions/Actions';
-import { IMovie } from '../../../components/molecules/MovieCard/IMovie';
 
-const movieObj: IMovie = {
-  id: 1,
-  title: 'Moana',
-  subtitle: 'Moana',
-  description: 'description',
-  rate: 5,
-  duration: 30,
-  yearOfRelease: '2020',
-  genre: ['Horror'],
-};
-
-test('AddMovieForm check text inserted', () => {
+test('AddMovieForm check text inserted', async () => {
+  const addMovieHandler = jest.fn();
   const middlewares: Array<any> = [];
   const mockStore = configureStore(middlewares);
   const initialState = {};
   const store = mockStore(initialState);
 
-  const form = mount(
+  render(
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <AddMovieForm />
+        <AddMovieForm addMovieHandler={addMovieHandler} />
       </Provider>
     </ThemeProvider>,
   );
-  act(() => {
-    form.update();
-    form.find('[type="submit"]').at(0).simulate('submit');
-    form.find('[type="submit"]').at(1).simulate('submit');
+  store.clearActions();
+  fireEvent.click(await screen.findByText('RESET'));
+  expect(store.getActions()).toEqual([actions.actionControlVisibility('add', false)]);
+
+  store.clearActions();
+  userEvent.type(screen.getAllByRole('textbox')[0], 'Moana');
+  userEvent.type(screen.getAllByRole('textbox')[1], '2018-03-31');
+  userEvent.type(screen.getAllByRole('textbox')[2], 'http://www.moana.com');
+  userEvent.type(screen.getAllByRole('textbox')[4], 'description');
+  userEvent.type(screen.getAllByRole('textbox')[5], '65');
+  userEvent.click(screen.getByRole('button', { name: /submit/i }));
+
+  await waitFor(() => {
+    expect(addMovieHandler).toHaveBeenCalledWith({
+      description: 'description',
+      duration: 65,
+      genre: [],
+      id: NaN,
+      img: 'http://www.moana.com',
+      rate: 0,
+      subtitle: 'Moana',
+      title: 'Moana',
+      yearOfRelease: '2018-03-31',
+    });
   });
-  //expect(store.getState).toEqual({});
-  //expect(store.getActions()).toEqual(actions.actionCreateMovie(movieObj));
-  expect(form.find('h2').text()).toEqual('ADD MOVIE');
 });

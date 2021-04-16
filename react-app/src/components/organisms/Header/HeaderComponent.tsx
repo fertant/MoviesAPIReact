@@ -25,7 +25,7 @@ const HeaderComponent: FunctionComponent = () => {
       <HeaderElementsWrapper>
         <TopNavWrapper>
           <CopyrightComponent />
-          <BlackButton onClick={onAddMovie}>
+          <BlackButton className="add-movie-button" onClick={onAddMovie}>
             <span>+ Add Movie</span>
           </BlackButton>
         </TopNavWrapper>

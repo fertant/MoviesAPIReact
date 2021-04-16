@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1618298896531" clover="3.2.0">
-  <project timestamp="1618298896532" name="All files">
-    <metrics statements="194" coveredstatements="175" conditionals="105" coveredconditionals="102" methods="56" coveredmethods="45" elements="355" coveredelements="322" complexity="0" loc="194" ncloc="194" packages="7" files="10" classes="10"/>
+<coverage generated="1618553158840" clover="3.2.0">
+  <project timestamp="1618553158840" name="All files">
+    <metrics statements="197" coveredstatements="182" conditionals="109" coveredconditionals="103" methods="57" coveredmethods="48" elements="363" coveredelements="333" complexity="0" loc="197" ncloc="197" packages="7" files="10" classes="10"/>
     <package name="actions">
       <metrics statements="36" coveredstatements="34" conditionals="2" coveredconditionals="2" methods="13" coveredmethods="11"/>
       <file name="Actions.ts" path="/Users/andrii/Git/MoviesAPIReact/react-app/src/actions/Actions.ts">
@@ -20,7 +20,7 @@
         <line num="21" count="3" type="stmt"/>
         <line num="22" count="3" type="stmt"/>
         <line num="25" count="3" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
         <line num="34" count="3" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
         <line num="43" count="3" type="stmt"/>
@@ -50,21 +50,21 @@
         <metrics statements="11" coveredstatements="11" conditionals="8" coveredconditionals="8" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="14" type="stmt"/>
-        <line num="8" count="14" type="stmt"/>
+        <line num="7" count="246" type="stmt"/>
+        <line num="8" count="246" type="stmt"/>
         <line num="22" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="27" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="28" count="7" type="stmt"/>
-        <line num="29" count="7" type="stmt"/>
+        <line num="28" count="123" type="stmt"/>
+        <line num="29" count="123" type="stmt"/>
         <line num="39" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="40" count="7" type="stmt"/>
+        <line num="40" count="123" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.molecules.Forms">
-      <metrics statements="37" coveredstatements="31" conditionals="36" coveredconditionals="36" methods="10" coveredmethods="6"/>
+      <metrics statements="40" coveredstatements="38" conditionals="40" coveredconditionals="37" methods="11" coveredmethods="9"/>
       <file name="AddMovieForm.tsx" path="/Users/andrii/Git/MoviesAPIReact/react-app/src/components/molecules/Forms/AddMovieForm.tsx">
-        <metrics statements="18" coveredstatements="12" conditionals="20" coveredconditionals="20" methods="5" coveredmethods="1"/>
+        <metrics statements="19" coveredstatements="17" conditionals="22" coveredconditionals="19" methods="6" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -72,20 +72,21 @@
         <line num="7" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="9" type="stmt"/>
-        <line num="24" count="8" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="51" count="8" type="stmt"/>
-        <line num="107" count="0" type="stmt"/>
-        <line num="142" count="0" type="stmt"/>
-        <line num="149" count="1" type="stmt"/>
+        <line num="21" count="164" type="stmt"/>
+        <line num="22" count="164" type="stmt"/>
+        <line num="23" count="164" type="stmt"/>
+        <line num="25" count="820" type="stmt"/>
+        <line num="29" count="164" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="49" count="0" type="cond" truecount="1" falsecount="1"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="55" count="164" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="140" count="1" type="stmt"/>
+        <line num="147" count="1" type="stmt"/>
       </file>
       <file name="Form.ts" path="/Users/andrii/Git/MoviesAPIReact/react-app/src/components/molecules/Forms/Form.ts">
-        <metrics statements="16" coveredstatements="16" conditionals="16" coveredconditionals="16" methods="5" coveredmethods="5"/>
+        <metrics statements="17" coveredstatements="17" conditionals="18" coveredconditionals="18" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="6" count="1" type="cond" truecount="2" falsecount="0"/>
@@ -93,21 +94,23 @@
         <line num="17" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="26" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="32" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="33" count="42" type="stmt"/>
+        <line num="33" count="738" type="stmt"/>
         <line num="38" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="39" count="35" type="stmt"/>
+        <line num="39" count="615" type="stmt"/>
         <line num="47" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="48" count="20" type="stmt"/>
+        <line num="48" count="153" type="stmt"/>
         <line num="51" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="53" count="7" type="stmt"/>
-        <line num="57" count="7" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
+        <line num="53" count="123" type="stmt"/>
+        <line num="57" count="123" type="stmt"/>
+        <line num="62" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="1" type="stmt"/>
       </file>
       <file name="FormValidationSchema.ts" path="/Users/andrii/Git/MoviesAPIReact/react-app/src/components/molecules/Forms/FormValidationSchema.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.molecules.MovieCard">

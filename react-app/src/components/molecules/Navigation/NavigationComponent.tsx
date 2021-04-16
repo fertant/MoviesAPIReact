@@ -23,7 +23,7 @@ const NavigationComponent: FunctionComponent<INavigation> = ({ filters }) => {
   return (
     <MainNavbarWrapper>
       <ManagePanelWrapper>
-        <ListWrapper>
+        <ListWrapper className="movie-type-filter">
           {filters?.map((item: IMenuItem) => (
             <ListItem
               key={item.title}
