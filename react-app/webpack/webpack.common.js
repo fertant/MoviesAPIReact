@@ -3,10 +3,9 @@ const loaders = require('./loaders');
 const plugins = require('./plugins');
 
 module.exports = {
-  entry: path.resolve(__dirname, '../src', 'index.tsx'),
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].[contenthash].js',
+    filename: 'js/[name].js',
     publicPath: '/',
   },
   resolve: {
@@ -32,16 +31,4 @@ module.exports = {
     plugins.HotModuleReplacement,
     plugins.HtmlPlugin,
   ],
-  optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    },
-  },
 };

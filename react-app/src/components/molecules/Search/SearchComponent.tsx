@@ -8,7 +8,7 @@ import { SearchWrapper, SearchTitle, SearchFieldWrapper } from './SearchElements
 import { ISearch } from './ISearch';
 import { actionSetFilter } from '../../../actions/Actions';
 
-const SearchComponent: FunctionComponent<ISearch> = ({ placeholder }) => {
+const SearchComponent: FunctionComponent<ISearch> = ({ placeholder, value }) => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
@@ -41,7 +41,7 @@ const SearchComponent: FunctionComponent<ISearch> = ({ placeholder }) => {
       <SearchTitle>Find your movie</SearchTitle>
       <form onSubmit={onSearchSubmit}>
         <SearchFieldWrapper>
-          <Input placeholder={placeholder} onKeyUp={onInput} />
+          <Input placeholder={placeholder} onKeyUp={onInput} defaultValue={value} />
           <SearchButton type="submit">Search</SearchButton>
         </SearchFieldWrapper>
       </form>

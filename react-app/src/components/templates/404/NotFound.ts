@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import img from '../../../../images/404-page.jpg';
 import { ITheme } from '../../theme/ITheme';
 
 export const NotFoundWrapper = styled.div`
@@ -11,13 +10,14 @@ export const NotFoundWrapper = styled.div`
 `;
 
 export const NotFoundBackground = styled.div`
-  height: 100%;
-  width: 35%;
-  min-width: 320px;
-  max-height: 460px;
-  margin: auto;
-  background: url(${img}) no-repeat center ${(props: ITheme) => props.theme.color_f};
-  background-size: cover;
+  img {
+    height: 100%;
+    width: 35%;
+    min-width: 320px;
+    max-height: 460px;
+    margin: auto;
+    display: block;
+  }
 `;
 
 export const BackWrapper = styled.div`

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
@@ -30,12 +30,13 @@ const MovieListWrapperComponent: FunctionComponent = () => {
   const type = useSelector(({ filters: { movieType: type } }) => type);
   const sort = useSelector(({ filters: { movieSort: sort } }) => sort);
   const loading = useSelector(({ requestApi: { isLoading: loading } }) => loading);
+  const movieDetails = useSelector(({ movieDetail: { movieDetail: movie } }) => movie);
   // eslint-disable-next-line max-len
   const filteredMovies = useSelector(({ moviesList: { moviesList: filteredMovies } }) => filteredMovies);
   const dispatch = useDispatch();
   const { id, search } = useParams();
-  if (search) dispatch(actionSetFilter('movieQuery', search));
-  if (id) {
+  if (search && filteredMovies.length === 0) dispatch(actionSetFilter('movieQuery', search));
+  if (id && !movieDetails) {
     dispatch(actionSelectMovieId(id));
     dispatch(actionControlVisibility('details', true));
   }

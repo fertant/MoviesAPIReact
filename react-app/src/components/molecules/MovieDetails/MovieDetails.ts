@@ -40,7 +40,6 @@ export const MovieDetailsCloseButton = styled.div`
 
 export const MovieContentWrapper = styled.div`
   display: flex;
-  padding-top: 20px;
 `;
 
 export const MovieContent = styled.div`

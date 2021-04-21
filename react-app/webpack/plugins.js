@@ -48,6 +48,6 @@ module.exports = {
   CleanWebpackPlugin: new CleanWebpackPlugin({
     protectWebpackAssets: false,
     cleanOnceBeforeBuildPatterns: ['!*.{png,jpg,gif,svg}'],
-    cleanAfterEveryBuildPatterns: ['!js', '!*.{png,jpg,gif,svg}','js/{theme_style,svgSprite}.js'],
+    cleanAfterEveryBuildPatterns: ['!js', '!*.{png,jpg,gif,svg}', 'js/{theme_style,svgSprite}.js'],
   }),
 };
