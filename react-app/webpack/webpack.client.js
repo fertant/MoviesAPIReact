@@ -9,6 +9,11 @@ module.exports = merge(common, {
   target: 'web',
   mode: process.env.NODE_ENV,
   entry: path.resolve(__dirname, '../src', 'client.tsx'),
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'js/[name].js',
+    publicPath: '/',
+  },
   devtool: isDevMod && 'inline-source-map',
   devServer: isDevMod ? {
     contentBase: path.resolve(__dirname, '../dist'),

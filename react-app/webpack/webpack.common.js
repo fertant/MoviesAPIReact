@@ -3,11 +3,6 @@ const loaders = require('./loaders');
 const plugins = require('./plugins');
 
 module.exports = {
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: 'js/[name].js',
-    publicPath: '/',
-  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },

@@ -35,7 +35,10 @@ const MovieListWrapperComponent: FunctionComponent = () => {
   const filteredMovies = useSelector(({ moviesList: { moviesList: filteredMovies } }) => filteredMovies);
   const dispatch = useDispatch();
   const { id, search } = useParams();
-  if (search && filteredMovies.length === 0) dispatch(actionSetFilter('movieQuery', search));
+  if (search) dispatch(actionSetFilter('movieQuery', search));
+  if (filteredMovies.length === 0) {
+    dispatch(actionApiFilterRequest());
+  }
   if (id && !movieDetails) {
     dispatch(actionSelectMovieId(id));
     dispatch(actionControlVisibility('details', true));
