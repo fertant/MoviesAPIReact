@@ -1,10 +1,8 @@
-import React, { FunctionComponent, useEffect } from 'react';
+import React, { FunctionComponent, useEffect, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { IMenuItem } from '../../molecules/Navigation/INavigation';
-import NavigationComponent from '../../molecules/Navigation/NavigationComponent';
-import MovieListComponent from '../../organisms/MovieList/MovieListComponent';
 import { MainWrapper, MovieCountWrapper, NoMovieFound } from './MovieListWrappers';
 import LoaderComponent from '../../atoms/Loader/LoaderComponent';
 import {
@@ -13,9 +11,11 @@ import {
   actionSelectMovieId,
   actionControlVisibility,
 } from '../../../actions/Actions';
-import HeaderComponent from '../../organisms/Header/HeaderComponent';
-import ErrorBoundary from '../../atoms/ErrorBoundary/ErrorBoundary';
+import NavigationComponent from '../../molecules/Navigation/NavigationComponent';
 
+const HeaderComponent = React.lazy(() => import('../../organisms/Header/HeaderComponent'));
+const ErrorBoundary = React.lazy(() => import('../../atoms/ErrorBoundary/ErrorBoundary'));
+const MovieListComponent = React.lazy(() => import('../../organisms/MovieList/MovieListComponent'));
 const filters: Array<IMenuItem> = [
   { title: 'All' },
   { title: 'Documentary' },
@@ -49,24 +49,26 @@ const MovieListWrapperComponent: FunctionComponent = () => {
   }, [type, sort, query]);
 
   return (
-    <ErrorBoundary>
-      <HeaderComponent />
-      <MainWrapper>
-        <NavigationComponent filters={filters} />
-        <MovieCountWrapper>
-          <strong>{filteredMovies.length}</strong>
-          &nbsp;
-          movies found
-        </MovieCountWrapper>
-        {(() => {
-          if (loading) return <LoaderComponent />;
-          if (filteredMovies.length > 0) {
-            return <MovieListComponent items={filteredMovies} />;
-          }
-          return <NoMovieFound>No Movie Found</NoMovieFound>;
-        })()}
-      </MainWrapper>
-    </ErrorBoundary>
+    <Suspense fallback={<LoaderComponent />}>
+      <ErrorBoundary>
+        <HeaderComponent search={search} />
+        <MainWrapper>
+          <NavigationComponent filters={filters} />
+          <MovieCountWrapper>
+            <strong>{filteredMovies.length}</strong>
+            &nbsp;
+            movies found
+          </MovieCountWrapper>
+          {(() => {
+            if (loading) return <LoaderComponent />;
+            if (filteredMovies.length > 0) {
+              return <MovieListComponent items={filteredMovies} />;
+            }
+            return <NoMovieFound>No Movie Found</NoMovieFound>;
+          })()}
+        </MainWrapper>
+      </ErrorBoundary>
+    </Suspense>
   );
 };
 

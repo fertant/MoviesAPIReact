@@ -12,6 +12,7 @@ import {
 } from './SortFilter';
 import { actionSetFilter } from '../../../actions/Actions';
 
+// PATTERN: render prop
 const SortFilterComponent: FunctionComponent<ISelectProps> = ({
   label = 'label',
   items,

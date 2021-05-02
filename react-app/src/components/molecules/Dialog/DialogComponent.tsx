@@ -15,6 +15,7 @@ import AddMovieForm from '../Forms/AddMovieForm';
 import DeleteMovieForm from '../Forms/DeleteMovieForm';
 import { IMovie } from '../MovieCard/IMovie';
 
+// PATTERN: high order component
 const DialogComponent: FunctionComponent<IModalProps> = ({ type }) => {
   const visible = useSelector(({ modals: { [type]: visibility } }) => visibility);
   const dispatch = useDispatch();

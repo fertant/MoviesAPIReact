@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
 
 import CopyrightComponent from '../../atoms/Copyright/CopyrightComponent';
 import { BlackButton } from '../../atoms/Button/Button';
@@ -12,15 +11,15 @@ import {
   HeaderWrapper,
   HeaderElementsWrapper,
 } from './HeaderElements';
+import { IHeader } from './IHeader';
 import MemoMovieDetailsComponent from '../../molecules/MovieDetails/MovieDetailsComponent';
 import img from '../../../../images/bg_header.jpg';
 
-const HeaderComponent: FunctionComponent = () => {
+const HeaderComponent: FunctionComponent<IHeader> = ({ search }) => {
   const dispatch = useDispatch();
   const onAddMovie = () => {
     dispatch(actionControlVisibility('add', true));
   };
-  const { search } = useParams();
 
   return (
     <HeaderWrapper>

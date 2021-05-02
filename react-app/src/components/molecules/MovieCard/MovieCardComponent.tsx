@@ -18,6 +18,7 @@ import {
 } from './MovieCard';
 import { actionControlVisibility, actionSelectMovie } from '../../../actions/Actions';
 
+// PATTERN: render prop
 const MovieCardComponent: FunctionComponent<IMovieProps> = ({ item }) => {
   const [editMenuOpened, setEditActive] = useState(false);
   const dispatch = useDispatch();

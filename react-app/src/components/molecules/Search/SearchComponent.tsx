@@ -8,6 +8,7 @@ import { SearchWrapper, SearchTitle, SearchFieldWrapper } from './SearchElements
 import { ISearch } from './ISearch';
 import { actionSetFilter } from '../../../actions/Actions';
 
+// PATTERN: render prop
 const SearchComponent: FunctionComponent<ISearch> = ({ placeholder, value }) => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
