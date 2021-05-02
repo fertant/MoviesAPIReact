@@ -66,7 +66,6 @@ export function createMovieRequest(movie: IMovie) {
     release_date: movie.yearOfRelease,
     genres: movie.genre,
   };
-  console.log(JSON.stringify(movieRequest));
   return axios.post(`${baseUrl}movies`, movieRequest)
     .then((response) => ({ response: response.data }))
     .catch((error) => ({ error }));
@@ -90,7 +89,6 @@ export function updateMovieRequest(movie: IMovie) {
 }
 
 export function deleteMovieRequest(movieId: string) {
-  console.log(movieId);
   return axios.delete(`${baseUrl}movies/${movieId}`)
     .then((response) => ({ response: response.data }))
     .catch((error) => ({ error }));

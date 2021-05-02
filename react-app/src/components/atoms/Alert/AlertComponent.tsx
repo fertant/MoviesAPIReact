@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
 
-import { AlertPopup } from './alert';
+import { AlertPopup } from './Alert';
 
-const AlertComponent = () => {
+const AlertComponent: FunctionComponent = () => {
   let type = 'success';
   const visible = useSelector(({ modals: { alert: visibility } }) => visibility);
   let text = useSelector(({ requestApi: { status: message } }) => message);

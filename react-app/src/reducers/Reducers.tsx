@@ -42,6 +42,7 @@ const moviesState = {
 
 const selectedMovieState = {
   selectedMovie: null,
+  selectedMovieDetail: 0,
 };
 
 const movieDetailState = {
@@ -105,7 +106,11 @@ const selectedMovie = (state: ISelectedMovie = selectedMovieState, action: IMovi
   switch (action.type) {
     case ActionTypes.SELECT_MOVIE: {
       const { movie } = action;
-      return { ...state, selectedMovie: movie };
+      return { ...state, selectedMovie: movie, selectedMovieId: movie.id };
+    }
+    case ActionTypes.SELECT_MOVIE_ID: {
+      const { id } = action;
+      return { ...state, selectedMovieId: id };
     }
     default:
       return state;

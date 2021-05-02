@@ -2,6 +2,7 @@ import React, { FunctionComponent, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import {
   MovieDetailsWrapper,
@@ -24,10 +25,14 @@ import { IMovie } from '../MovieCard/IMovie';
 const MovieDetailsComponent: FunctionComponent = () => {
   const type = 'details';
   let visible = useSelector(({ modals: { [type]: visibility } }) => visibility);
+  const history = useHistory();
   const movieDetails: IMovie = useSelector(({ movieDetail: { movieDetail: movie } }) => movie);
   visible = movieDetails ? visible : false;
   const dispatch = useDispatch();
-  const onClose = () => dispatch(actionControlVisibility(type, false));
+  const onClose = () => {
+    history.push('/');
+    dispatch(actionControlVisibility(type, false));
+  };
 
   return !!visible && (
     <HeaderMovieDetails>

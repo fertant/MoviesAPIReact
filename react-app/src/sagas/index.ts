@@ -26,8 +26,8 @@ export function* fetchMovies() {
 }
 
 export function* fetchMovieDetail() {
-  const movie = yield select((state) => (state.selectedMovie.selectedMovie));
-  const { response, error } = yield call(getMovieDetail, movie.id);
+  const id = yield select((state) => (state.selectedMovie.selectedMovieId));
+  const { response, error } = yield call(getMovieDetail, id);
   if (error) put(actions.actionApiResponseFault(error));
   yield put(actions.actionMovieDetails(response));
 }
@@ -73,6 +73,7 @@ export function* editMovie() {
 
 export function* movieDetail() {
   yield takeLatest(actions.ActionTypes.SELECT_MOVIE, fetchMovieDetail);
+  yield takeLatest(actions.ActionTypes.SELECT_MOVIE_ID, fetchMovieDetail);
 }
 
 export function* filterMovies() {

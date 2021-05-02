@@ -16,6 +16,7 @@ export enum ActionTypes {
   EDIT_MOVIE = 'EDIT_MOVIE',
   DELETE_MOVIE = 'DELETE_MOVIE',
   MOVIE_DETAIL = 'MOVIE_DETAIL',
+  SELECT_MOVIE_ID = 'SELECT_MOVIE_ID',
   START_FILTER_REQUEST = 'START_FILTER_REQUEST',
   REQUEST_SUCCESSFUL = 'REQUEST_SUCCESSFUL',
   REQUEST_FAULT = 'REQUEST_FAULT',
@@ -90,6 +91,13 @@ export const actionSelectMovie = (
 ): IMovieAction => ({
   type: ActionTypes.SELECT_MOVIE,
   movie,
+});
+
+export const actionSelectMovieId = (
+  id: number,
+): IMovieAction => ({
+  type: ActionTypes.SELECT_MOVIE_ID,
+  id,
 });
 
 export const actionMovieDetails = (

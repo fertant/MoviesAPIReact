@@ -30,7 +30,7 @@ export const HeaderBackground = styled.div`
   right: 0;
   bottom: 0;
   filter: blur(2px);
-  background: url(${img}) no-repeat center ${props => props.theme.color_f};
+  background: url(${img}) no-repeat center ${(props: ITheme) => props.theme.color_f};
   background-size: cover;
 `;
 

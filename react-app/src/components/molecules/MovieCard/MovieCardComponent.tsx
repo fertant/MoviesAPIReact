@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { IMovieProps } from './IMovie';
 import {
@@ -20,6 +21,8 @@ import { actionControlVisibility, actionSelectMovie } from '../../../actions/Act
 const MovieCardComponent: FunctionComponent<IMovieProps> = ({ item }) => {
   const [editMenuOpened, setEditActive] = useState(false);
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const onEditMovie = () => {
     dispatch(actionSelectMovie(item));
     dispatch(actionControlVisibility('edit', true));
@@ -33,6 +36,7 @@ const MovieCardComponent: FunctionComponent<IMovieProps> = ({ item }) => {
   const onShowMovieDetails = useCallback(() => {
     dispatch(actionSelectMovie(item));
     dispatch(actionControlVisibility('details', true));
+    history.push(`/film/${item.id}`);
   }, [item]);
 
   return (
