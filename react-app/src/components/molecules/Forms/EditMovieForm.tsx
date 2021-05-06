@@ -14,11 +14,11 @@ import {
   StyledSelect,
   FieldError,
 } from './Form';
-import { IMovieProps, ISelectValue, IMovieValues } from './IForm';
+import { ISelectValue, IMovieValues } from './IForm';
 import { actionUpdateMovie, actionControlVisibility } from '../../../actions/Actions';
 import { schema, Genre } from './FormValidationSchema';
 
-const EditMovieForm: FunctionComponent<IMovieProps> = () => {
+const EditMovieForm: FunctionComponent = () => {
   const movie: IMovie = useSelector(({ selectedMovie: { selectedMovie: movie } }) => movie);
   const dispatch = useDispatch();
   const options = Object

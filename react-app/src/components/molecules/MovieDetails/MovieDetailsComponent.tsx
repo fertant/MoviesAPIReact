@@ -21,12 +21,14 @@ import {
 } from './MovieDetails';
 import { actionControlVisibility } from '../../../actions/Actions';
 import { IMovie } from '../MovieCard/IMovie';
+import { IState } from '../../../reducers/IState';
 
 const MovieDetailsComponent: FunctionComponent = () => {
   const type = 'details';
-  let visible = useSelector(({ modals: { [type]: visibility } }) => visibility);
+  let visible = useSelector(({ modals: { [type]: visibility } }: IState) => visibility);
   const history = useHistory();
-  const movieDetails: IMovie = useSelector(({ movieDetail: { movieDetail: movie } }) => movie);
+  // eslint-disable-next-line max-len
+  const movieDetails: IMovie = useSelector(({ movieDetail: { movieDetail: movie } }: IState) => movie);
   visible = movieDetails ? visible : false;
   const dispatch = useDispatch();
   const onClose = () => {

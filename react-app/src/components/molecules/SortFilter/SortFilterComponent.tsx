@@ -23,21 +23,25 @@ const SortFilterComponent: FunctionComponent<ISelectProps> = ({
   const onFilter = (item: ISelectItem) => {
     setSelected(item);
     dispatch(actionSetFilter('movieSort', item.key));
-  }
+  };
 
   return (
     <SelectWrapper onClick = {() => setOpenState(!opened)}>
       <label>{label}</label>
       <SelectedOption>{selectedItem.value}</SelectedOption>
-      <FontAwesomeIcon icon={opened ? faCaretUp : faCaretDown}
-                       className='selector-caret'/>  
+      <FontAwesomeIcon
+        icon={opened ? faCaretUp : faCaretDown}
+        className="selector-caret"
+      />
       <SelectListWrapper status={opened}>
         {
           items
             .filter((item: ISelectItem) => item.key !== selectedItem?.key)
             .map((item: ISelectItem) => (
-              <SelectListItem key={item.key}
-                              onClick={() => onFilter(item)}>
+              <SelectListItem
+                key={item.key}
+                onClick={() => onFilter(item)}
+              >
                 {item.value}
               </SelectListItem>
             ))
@@ -45,6 +49,6 @@ const SortFilterComponent: FunctionComponent<ISelectProps> = ({
       </SelectListWrapper>
     </SelectWrapper>
   );
-}
+};
 
 export default SortFilterComponent;

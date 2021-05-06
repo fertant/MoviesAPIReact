@@ -23,21 +23,25 @@ const NavigationComponent: FunctionComponent<INavigation> = ({ filters }) => {
   return (
     <MainNavbarWrapper>
       <ManagePanelWrapper>
-        <ListWrapper>
+        <ListWrapper className="movie-type-filter">
           {filters?.map((item: IMenuItem) => (
-            <ListItem key={item.title}
-                      active={selectedTab === item.title}
-                      onClick={() => onFilter(item.title)}>
+            <ListItem
+              key={item.title}
+              active={selectedTab === item.title}
+              onClick={() => onFilter(item.title)}
+            >
               {item.title}
             </ListItem>
           ))}
         </ListWrapper>
-        <SortFilterComponent label={'Sort by'}
-                          selected={{key: 'releasedate', value: 'release date'}}
-                          items={[
-                            {key: 'yearOfRelease', value: 'release date'},
-                            {key: 'title', value: 'title'},
-                          ]}/>
+        <SortFilterComponent
+          label="Sort by"
+          selected={{ key: 'releasedate', value: 'release date' }}
+          items={[
+            { key: 'yearOfRelease', value: 'release date' },
+            { key: 'title', value: 'title' },
+          ]}
+        />
       </ManagePanelWrapper>
       <SeparatedLine />
     </MainNavbarWrapper>

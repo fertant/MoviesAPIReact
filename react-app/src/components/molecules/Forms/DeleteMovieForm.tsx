@@ -8,10 +8,9 @@ import {
   FormTitle,
   FormElement,
 } from './Form';
-import { IMovieProps } from './IForm';
 import { actionDeleteMovie, actionControlVisibility } from '../../../actions/Actions';
 
-const DeleteMovieForm: FunctionComponent<IMovieProps> = () => {
+const DeleteMovieForm: FunctionComponent = () => {
   const movie: IMovie = useSelector(({ selectedMovie: { selectedMovie: movie } }) => movie);
   const dispatch = useDispatch();
 

@@ -51,10 +51,10 @@ const MovieCardComponent: FunctionComponent<IMovieProps> = ({ item }) => {
       </EditMenu>
       <MovieScreen src={item.img} onClick={onShowMovieDetails} />
       <MovieTitleWrapper>
-        <MovieTitle>{ item.title }</MovieTitle>
+        <MovieTitle className="title">{ item.title }</MovieTitle>
         <MovieYear>{ item.yearOfRelease }</MovieYear>
       </MovieTitleWrapper>
-      <MovieGenre>{ item.genre.join(', ') }</MovieGenre>
+      <MovieGenre className="genre">{ item.genre.join(', ') }</MovieGenre>
     </MovieItemWrapper>
   );
 };

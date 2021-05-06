@@ -6,11 +6,10 @@ import { IMovieList } from './IMovieList';
 import MoviesWrapper from './MovieList';
 
 const MovieListComponent: FunctionComponent<IMovieList> = ({ items }) => (
-  <MoviesWrapper>
+  <MoviesWrapper className="movie-listing">
     {
       items.map((movie: IMovie) => (
-        <MovieCardComponent key={movie.id}
-                            item={movie}/>
+        <MovieCardComponent key={movie.id} item={movie} />
       ))
     }
   </MoviesWrapper>

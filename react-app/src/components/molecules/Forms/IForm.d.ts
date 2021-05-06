@@ -1,9 +1,3 @@
-import { IMovie } from '../MovieCard/IMovie';
-
-export interface IMovieProps {
-  movie: IMovie,
-}
-
 export interface ISelectValue {
   value: string,
   label: string,
@@ -14,7 +8,11 @@ export interface IMovieValues {
   title: string,
   releaseDate: string,
   movieUrl?: string,
-  genre: Array<ISelectValue>,
+  genre?: Array<ISelectValue>,
   overview: string,
   runtime: string,
+}
+
+export interface IAddMovieProps {
+  addMovieHandler: Function,
 }

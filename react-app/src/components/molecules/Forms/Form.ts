@@ -59,4 +59,8 @@ export const StyledSelect = styled(Select)`
   }
 `;
 
+export const HiddenSelect = styled.select`
+  display: none;
+`;
+
 export default FormFooter;

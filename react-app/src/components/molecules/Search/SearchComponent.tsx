@@ -13,9 +13,10 @@ const SearchComponent: FunctionComponent<ISearch> = ({ placeholder }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const onInput = (e: React.SyntheticEvent) => {
-    setInput(e.target.value);
-    if (e.keyCode === '13') {
+  const onInput = (e: React.KeyboardEvent<Object>) => {
+    const element = e.target as unknown as HTMLInputElement;
+    setInput(element.value);
+    if (e.key === '13') {
       dispatch(actionSetFilter('movieQuery', input));
       if (input === '') {
         history.push('/');
@@ -38,12 +39,12 @@ const SearchComponent: FunctionComponent<ISearch> = ({ placeholder }) => {
   return (
     <SearchWrapper>
       <SearchTitle>Find your movie</SearchTitle>
-        <form onSubmit={onSearchSubmit}>
-          <SearchFieldWrapper>
-            <Input placeholder={placeholder} onKeyUp={onInput}/>
-            <SearchButton type={'submit'}>Search</SearchButton>
-          </SearchFieldWrapper>
-        </form>
+      <form onSubmit={onSearchSubmit}>
+        <SearchFieldWrapper>
+          <Input placeholder={placeholder} onKeyUp={onInput} />
+          <SearchButton type="submit">Search</SearchButton>
+        </SearchFieldWrapper>
+      </form>
     </SearchWrapper>
   );
 };

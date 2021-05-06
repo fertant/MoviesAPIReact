@@ -1,9 +1,12 @@
+import { IMovieAction } from '../actions/IActions';
 import { IMovie } from '../components/molecules/MovieCard/IMovie';
 
 export interface IModal {
   add: boolean,
   edit: boolean,
   delete: boolean,
+  details: boolean,
+  alert: boolean,
 }
 
 export interface IFilter {
@@ -33,4 +36,14 @@ export interface IMovieDetail {
 
 export interface IMovieActionState {
   movieObject: IMovie | null,
+}
+
+export interface IState {
+  modals: IModal,
+  filters: IFilter,
+  moviesList: IMoviesList,
+  requestApi: IRequestProcess,
+  selectedMovie: ISelectedMovie,
+  movieDetail: IMovieDetail,
+  movieAction: IMovieAction,
 }
