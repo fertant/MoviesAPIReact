@@ -3,7 +3,6 @@
 context('Movies page', () => {
   beforeEach(() => {
     cy.visit('http://localhost:9001')
-    cy.wait(2000)
   })
 
   it('Count movies in DOM', () => {
@@ -20,7 +19,6 @@ context('Movies page', () => {
   it('Filter by type', () => {
     cy.get('.movie-type-filter>li')
       .eq(1).click()
-    cy.wait(2000)
     cy.get('.movie-listing>div')
       .eq(1).find('.genre')
       .should('contain', 'Documentary')
@@ -29,7 +27,6 @@ context('Movies page', () => {
   it('Filter by type', () => {
     cy.get('.movie-type-filter>li')
       .eq(1).click()
-    cy.wait(2000)
     cy.get('.movie-listing>div')
       .eq(1).find('.genre')
       .should('contain', 'Documentary')
@@ -39,7 +36,6 @@ context('Movies page', () => {
     cy.get('input')
       .type('Transformer')
     cy.get('button[type=submit]').click()
-    cy.wait(2000)
     cy.get('.movie-listing>div')
       .eq(1).find('.title')
       .should('contain', 'Transformer')

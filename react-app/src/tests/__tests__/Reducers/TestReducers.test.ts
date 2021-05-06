@@ -18,8 +18,19 @@ const movieObj: IMovie = {
 
 describe('post reducer', () => {
   it('should return the MODAL_VISIBILITY state', () => {
-    expect(reducers.modals(reducers.modalsState, actions.actionControlVisibility('add', true))).toEqual({ ...reducers.modalsState, add: true });
-    expect(reducers.modals(reducers.modalsState, { type: 'EMPTY', modalType: 'add', visibility: true })).toEqual({ ...reducers.modalsState });
+    // AAA-pattern.
+    // Arrange.
+    const addState = { ...reducers.modalsState, add: true };
+    const defaultState = { ...reducers.modalsState };
+    const addAction = actions.actionControlVisibility('add', true);
+
+    // Act.
+    const reduceAddVisible = reducers.modals(reducers.modalsState, addAction);
+    const reduceDefault = reducers.modals(reducers.modalsState, { type: 'EMPTY', modalType: 'add', visibility: true });
+
+    // Assert.
+    expect(reduceAddVisible).toEqual(addState);
+    expect(reduceDefault).toEqual(defaultState);
   });
 
   it('should return the SET_FILTER state', () => {
