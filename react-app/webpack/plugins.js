@@ -7,8 +7,8 @@ const _ImageminPlugin = require('imagemin-webpack-plugin').default;
 const _SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const imagePath = path.resolve(__dirname, '../images');
+const LoadablePlugin = require('@loadable/webpack-plugin');
 
 const MiniCssExtractPlugin = new _MiniCssExtractPlugin({
   filename: 'css/[name].css',
@@ -38,6 +38,8 @@ const HtmlPlugin = new HtmlWebpackPlugin({
   title: "Movie Search"
 });
 
+const Loadable = new LoadablePlugin();
+
 module.exports = {
   ProgressPlugin,
   MiniCssExtractPlugin,
@@ -45,6 +47,7 @@ module.exports = {
   SpriteLoaderPlugin,
   HotModuleReplacement,
   HtmlPlugin,
+  Loadable,
   CleanWebpackPlugin: new CleanWebpackPlugin({
     protectWebpackAssets: false,
     cleanOnceBeforeBuildPatterns: ['!*.{png,jpg,gif,svg}'],

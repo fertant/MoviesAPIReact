@@ -23,6 +23,7 @@ module.exports = {
     plugins.ProgressPlugin,
     plugins.CleanWebpackPlugin,
     plugins.HotModuleReplacement,
+    plugins.Loadable,
     plugins.HtmlPlugin,
   ],
 };

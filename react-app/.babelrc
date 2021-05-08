@@ -1,6 +1,12 @@
 {
   "presets": ["@babel/react", "@babel/typescript", ["@babel/env", { "loose": true, "modules": false, "forceAllTransforms": true }]],
-  "plugins": ["@babel/transform-runtime", "react-hot-loader/babel", "@babel/plugin-proposal-object-rest-spread", "@babel/plugin-proposal-class-properties"],
+  "plugins": [
+    "@babel/transform-runtime",
+    "react-hot-loader/babel",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-class-properties",
+    "@loadable/babel-plugin"
+  ],
   "env": {
     "test": {
       "presets": ["@babel/react", "@babel/typescript", ["@babel/env", { "modules": "commonjs" }]],

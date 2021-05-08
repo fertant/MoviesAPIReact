@@ -12,10 +12,10 @@ import {
   actionControlVisibility,
 } from '../../../actions/Actions';
 import NavigationComponent from '../../molecules/Navigation/NavigationComponent';
+import HeaderComponent from '../../organisms/Header/HeaderComponent';
+import ErrorBoundary from '../../atoms/ErrorBoundary/ErrorBoundary';
+import MovieListComponent from '../../organisms/MovieList/MovieListComponent';
 
-const HeaderComponent = React.lazy(() => import('../../organisms/Header/HeaderComponent'));
-const ErrorBoundary = React.lazy(() => import('../../atoms/ErrorBoundary/ErrorBoundary'));
-const MovieListComponent = React.lazy(() => import('../../organisms/MovieList/MovieListComponent'));
 const filters: Array<IMenuItem> = [
   { title: 'All' },
   { title: 'Documentary' },
@@ -49,26 +49,24 @@ const MovieListWrapperComponent: FunctionComponent = () => {
   }, [type, sort, query]);
 
   return (
-    <Suspense fallback={<LoaderComponent />}>
-      <ErrorBoundary>
-        <HeaderComponent search={search} />
-        <MainWrapper>
-          <NavigationComponent filters={filters} />
-          <MovieCountWrapper>
-            <strong>{filteredMovies.length}</strong>
-            &nbsp;
-            movies found
-          </MovieCountWrapper>
-          {(() => {
-            if (loading) return <LoaderComponent />;
-            if (filteredMovies.length > 0) {
-              return <MovieListComponent items={filteredMovies} />;
-            }
-            return <NoMovieFound>No Movie Found</NoMovieFound>;
-          })()}
-        </MainWrapper>
-      </ErrorBoundary>
-    </Suspense>
+    <ErrorBoundary>
+      <HeaderComponent search={search} />
+      <MainWrapper>
+        <NavigationComponent filters={filters} />
+        <MovieCountWrapper>
+          <strong>{filteredMovies.length}</strong>
+          &nbsp;
+          movies found
+        </MovieCountWrapper>
+        {(() => {
+          if (loading) return <LoaderComponent />;
+          if (filteredMovies.length > 0) {
+            return <MovieListComponent items={filteredMovies} />;
+          }
+          return <NoMovieFound>No Movie Found</NoMovieFound>;
+        })()}
+      </MainWrapper>
+    </ErrorBoundary>
   );
 };
 
