@@ -23,6 +23,15 @@ module.exports = merge(common, {
     historyApiFallback: true,
     hot: true,
   } : {},
+  module: {
+    rules: [
+      {
+        test: /\.(png|svg|jpg|gif)$/i,
+        exclude: /icons\/.*\.svg$/,
+        loader: 'file-loader',
+      },
+    ],
+  },
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {

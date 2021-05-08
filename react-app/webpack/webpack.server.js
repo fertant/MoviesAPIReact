@@ -14,4 +14,16 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, '../dist'),
     libraryTarget: 'commonjs2',
   },
+  module: {
+    rules: [
+      {
+        test: /\.(png|svg|jpg|gif)$/i,
+        exclude: /icons\/.*\.svg$/,
+        loader: 'file-loader',
+        options: {
+          name: '/[path][name].[ext]',
+        },
+      },
+    ],
+  },
 });

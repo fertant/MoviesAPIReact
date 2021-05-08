@@ -1,8 +1,16 @@
-import React, { FunctionComponent, useEffect, Suspense } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { FunctionComponent, useEffect } from 'react';
+import { useDispatch, connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { IMenuItem } from '../../molecules/Navigation/INavigation';
+import {
+  moviesListSelector,
+  movieDetailsSelector,
+  requestSelector,
+  querySelector,
+  typeSelector,
+  sortSelector,
+} from '../../../selectors';
 import { MainWrapper, MovieCountWrapper, NoMovieFound } from './MovieListWrappers';
 import LoaderComponent from '../../atoms/Loader/LoaderComponent';
 import {
@@ -25,14 +33,15 @@ const filters: Array<IMenuItem> = [
   { title: 'Action & Adventure' },
 ];
 
-const MovieListWrapperComponent: FunctionComponent = () => {
-  const query = useSelector(({ filters: { movieQuery: query } }) => query);
-  const type = useSelector(({ filters: { movieType: type } }) => type);
-  const sort = useSelector(({ filters: { movieSort: sort } }) => sort);
-  const loading = useSelector(({ requestApi: { isLoading: loading } }) => loading);
-  const movieDetails = useSelector(({ movieDetail: { movieDetail: movie } }) => movie);
-  // eslint-disable-next-line max-len
-  const filteredMovies = useSelector(({ moviesList: { moviesList: filteredMovies } }) => filteredMovies);
+const MovieListWrapperComponentWithProps: FunctionComponent = (props: any) => {
+  const {
+    filteredMovies,
+    movieDetails,
+    loading,
+    query,
+    type,
+    sort,
+  } = props;
   const dispatch = useDispatch();
   const { id, search } = useParams();
   if (search) dispatch(actionSetFilter('movieQuery', search));
@@ -69,5 +78,17 @@ const MovieListWrapperComponent: FunctionComponent = () => {
     </ErrorBoundary>
   );
 };
+
+const mapStateToProps = (state: any) => (
+  {
+    filteredMovies: moviesListSelector(state),
+    movieDetails: movieDetailsSelector(state),
+    loading: requestSelector(state),
+    query: querySelector(state),
+    type: typeSelector(state),
+    sort: sortSelector(state),
+  }
+);
+const MovieListWrapperComponent = connect(mapStateToProps)(MovieListWrapperComponentWithProps);
 
 export default MovieListWrapperComponent;

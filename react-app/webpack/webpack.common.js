@@ -11,7 +11,7 @@ module.exports = {
       loaders.SVGSpriteLoader,
       loaders.CSSLoader,
       loaders.SASSLoader,
-      loaders.ImageLoader,
+      //loaders.ImageLoader,
       loaders.FontLoader,
       //loaders.ESLint,
     ],
