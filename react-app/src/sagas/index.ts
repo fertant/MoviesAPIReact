@@ -81,7 +81,8 @@ export function* filterMovies() {
 }
 
 export function* startup() {
-  yield fork(fetchMovies);
+  const moviesList = yield select((state) => (state.moviesList));
+  if (moviesList.length === 0) yield fork(fetchMovies);
 }
 
 export default function* root() {
