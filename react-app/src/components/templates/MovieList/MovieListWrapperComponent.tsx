@@ -11,8 +11,6 @@ import {
   typeSelector,
   sortSelector,
 } from '../../../selectors';
-import NavigationComponent from '../../molecules/Navigation/NavigationComponent';
-import MovieListComponent from '../../organisms/MovieList/MovieListComponent';
 import { MainWrapper, MovieCountWrapper, NoMovieFound } from './MovieListWrappers';
 import LoaderComponent from '../../atoms/Loader/LoaderComponent';
 import {
@@ -21,8 +19,10 @@ import {
   actionSelectMovieId,
   actionControlVisibility,
 } from '../../../actions/Actions';
+import NavigationComponent from '../../molecules/Navigation/NavigationComponent';
 import HeaderComponent from '../../organisms/Header/HeaderComponent';
 import ErrorBoundary from '../../atoms/ErrorBoundary/ErrorBoundary';
+import MovieListComponent from '../../organisms/MovieList/MovieListComponent';
 
 const filters: Array<IMenuItem> = [
   { title: 'All' },
@@ -59,7 +59,7 @@ const MovieListWrapperComponentWithProps: FunctionComponent = (props: any) => {
 
   return (
     <ErrorBoundary>
-      <HeaderComponent />
+      <HeaderComponent search={search} />
       <MainWrapper>
         <NavigationComponent filters={filters} />
         <MovieCountWrapper>

@@ -15,7 +15,7 @@ const NotFoundComponent: FunctionComponent = () => {
   const history = useHistory();
 
   return (
-    <div>
+    <>
       <TopNavWrapper>
         <CopyrightComponent />
       </TopNavWrapper>
@@ -27,7 +27,7 @@ const NotFoundComponent: FunctionComponent = () => {
       <BackWrapper>
         <BlackButtonWithBorder onClick={() => history.push('/')}>GO BACK TO HOME</BlackButtonWithBorder>
       </BackWrapper>
-    </div>
+    </>
   );
 };
 

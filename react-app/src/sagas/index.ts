@@ -17,7 +17,6 @@ import {
 } from '../services';
 
 export function* fetchMovies() {
-  yield delay(1000);
   const filters = yield select((state) => (state.filters));
   const { response, error } = yield call(getMovies, filters);
   if (error) put(actions.actionApiResponseFault(error));
@@ -38,7 +37,6 @@ export function* createMovie() {
   if (error) put(actions.actionApiResponseFault(error));
   yield put(actions.actionApiResponseSuccessful(`New movie creates with title: ${movie.title}`));
   yield put(actions.actionControlVisibility('alert', true));
-  yield delay(1000);
   yield put(actions.actionControlVisibility('alert', false));
   yield put(actions.actionApiFilterRequest());
 }
@@ -49,7 +47,6 @@ export function* updateMovie() {
   if (error) put(actions.actionApiResponseFault(error));
   yield put(actions.actionApiResponseSuccessful(`Movie ${movie.id} updated.`));
   yield put(actions.actionControlVisibility('alert', true));
-  yield delay(1000);
   yield put(actions.actionControlVisibility('alert', false));
   yield put(actions.actionApiFilterRequest());
 }
@@ -60,7 +57,6 @@ export function* deleteMovie() {
   if (error) put(actions.actionApiResponseFault(error));
   put(actions.actionApiResponseSuccessful(`Movie ${movie.id} deleted.`));
   yield put(actions.actionControlVisibility('alert', true));
-  yield delay(1000);
   yield put(actions.actionControlVisibility('alert', false));
   yield put(actions.actionApiFilterRequest());
 }

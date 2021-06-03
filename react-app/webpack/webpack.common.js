@@ -1,4 +1,3 @@
-const path = require('path');
 const loaders = require('./loaders');
 const plugins = require('./plugins');
 
@@ -12,7 +11,7 @@ module.exports = {
       loaders.SVGSpriteLoader,
       loaders.CSSLoader,
       loaders.SASSLoader,
-      loaders.ImageLoader,
+      //loaders.ImageLoader,
       loaders.FontLoader,
       //loaders.ESLint,
     ],
@@ -24,6 +23,7 @@ module.exports = {
     plugins.ProgressPlugin,
     plugins.CleanWebpackPlugin,
     plugins.HotModuleReplacement,
+    plugins.Loadable,
     plugins.HtmlPlugin,
   ],
 };
